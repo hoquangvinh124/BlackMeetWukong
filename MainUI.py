@@ -12,13 +12,15 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1253, 985)
+        MainWindow.resize(1212, 831)
+        MainWindow.setMinimumSize(QtCore.QSize(1212, 831))
+        MainWindow.setMaximumSize(QtCore.QSize(1212, 831))
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setEnabled(False)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(parent=self.centralwidget)
         self.widget.setEnabled(False)
-        self.widget.setGeometry(QtCore.QRect(10, 20, 71, 831))
+        self.widget.setGeometry(QtCore.QRect(10, 0, 71, 831))
         self.widget.setMinimumSize(QtCore.QSize(71, 0))
         self.widget.setMaximumSize(QtCore.QSize(71, 16777215))
         self.widget.setStyleSheet("QWidget{\n"
@@ -110,7 +112,7 @@ class Ui_MainWindow(object):
         self.settings_2.setIconSize(QtCore.QSize(100, 20))
         self.settings_2.setObjectName("settings_2")
         self.widget_2 = QtWidgets.QWidget(parent=self.centralwidget)
-        self.widget_2.setGeometry(QtCore.QRect(90, 20, 244, 831))
+        self.widget_2.setGeometry(QtCore.QRect(90, 0, 244, 831))
         self.widget_2.setStyleSheet("QWidget{\n"
 "background-color: rgb(0, 0, 0);\n"
 "color:white;\n"
@@ -366,7 +368,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
         self.widget3 = QtWidgets.QWidget(parent=self.centralwidget)
-        self.widget3.setGeometry(QtCore.QRect(340, 20, 867, 831))
+        self.widget3.setGeometry(QtCore.QRect(340, 0, 867, 831))
         self.widget3.setObjectName("widget3")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.widget3)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -543,7 +545,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.widget_3)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1253, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1212, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
