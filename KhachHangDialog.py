@@ -125,7 +125,7 @@ class Ui_KhachHangDialog(object):
         self.verticalLayout_16.addWidget(self.label_16)
         self.nm_comboBox = QtWidgets.QComboBox(parent=self.layoutWidget)
         font = QtGui.QFont()
-        font.setFamily("MS Shell Dlg 2")
+        font.setFamily("Poppins Medium")
         font.setPointSize(7)
         font.setBold(False)
         font.setWeight(50)
