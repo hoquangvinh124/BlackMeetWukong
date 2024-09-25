@@ -1,8 +1,10 @@
-from PyQt6.QtWidgets import QApplication, QMainWindow
-from MainUI import Ui_MainWindow  # Giao diện được tạo từ Qt Designer
-import resources# Tệp chứa tài nguyên từ .qrc
+import sys
 
-app = QApplication([])
+from PyQt6.QtWidgets import QApplication, QMainWindow
+from Frontpage import Ui_MainWindow  # Giao diện được tạo từ Qt Designer
+
+
+app = QApplication(sys.argv)
 
 # Tạo cửa sổ QMainWindow
 mainWindow = QMainWindow()
