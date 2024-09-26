@@ -9,7 +9,7 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         self.setWindowTitle('SideBar Menu')
 
     #Hide Widget Menu
-        self.icon_only_widget.setHiden(True)
+        self.icon_only_widget.setHidden(True)
 
     #Hide Dropdowns
         self.students_dropdown.setHidden(True)
