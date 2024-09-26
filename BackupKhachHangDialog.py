@@ -259,7 +259,7 @@ class Ui_KhachHangDialog(QDialog):
 
     def retranslateUi(self, KhachHangDialog):
         _translate = QtCore.QCoreApplication.translate
-        KhachHangDialog.setWindowTitle(_translate("Thêm Khách Hàng", "Thêm Khách Hàng"))
+        KhachHangDialog.setWindowTitle(_translate("Add", "Add"))
         self.label.setText(_translate("KhachHangDialog", "<html><head/><body><p align=\"center\">Add customer</p></body></html>"))
         self.label_2.setText(_translate("KhachHangDialog", "Full Name"))
         self.label_15.setText(_translate("KhachHangDialog", "<html><head/><body><p>Gender</p></body></html>"))

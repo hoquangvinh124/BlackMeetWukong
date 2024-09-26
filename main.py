@@ -1,22 +1,10 @@
-import sys
-
 from PyQt6.QtWidgets import QApplication, QMainWindow
-from Frontpage import Ui_MainWindow  # Giao diện được tạo từ Qt Designer
+from MainUI import Ui_MainWindow
+import resources_rc
 
-
-app = QApplication(sys.argv)
-
-# Tạo cửa sổ QMainWindow
-mainWindow = QMainWindow()
-
-# Tạo đối tượng giao diện từ Ui_MainWindow
-ui = Ui_MainWindow()
-
-# Thiết lập giao diện cho cửa sổ chính
-ui.setupUi(mainWindow)
-
-# Hiển thị cửa sổ
-mainWindow.show()
-
-# Chạy ứng dụng
-app.exec()
+app = QApplication([])  # Initialize the application
+MainWindow = QMainWindow()  # Create an instance of QMainWindow
+ui = Ui_MainWindow()  # Create an instance of the UI class
+ui.setupUi(MainWindow)  # Set up the UI on the QMainWindow instance
+MainWindow.show()  # Show the QMainWindow
+app.exec()  # Execute the application

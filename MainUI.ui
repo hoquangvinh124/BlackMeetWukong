@@ -27,11 +27,11 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <widget class="QWidget" name="widget" native="true">
     <property name="enabled">
-     <bool>false</bool>
+     <bool>true</bool>
     </property>
     <property name="geometry">
      <rect>
@@ -58,36 +58,6 @@
 background-color: rgb(0, 0, 0);
 }</string>
     </property>
-    <widget class="QPushButton" name="dashboard_1">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>80</y>
-       <width>75</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="Accessories/resources.qrc">
-       <normaloff>:/dashboardsmall1.png</normaloff>
-       <normalon>:/dashboard1.png</normalon>:/dashboardsmall1.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>16</width>
-       <height>16</height>
-      </size>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
@@ -113,165 +83,180 @@ background-color: rgb(0, 0, 0);
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QPushButton" name="institution_1">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>120</y>
-       <width>71</width>
-       <height>23</height>
+       <x>-20</x>
+       <y>80</y>
+       <width>115</width>
+       <height>251</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="Accessories/resources.qrc">
-       <normaloff>:/institutionsmall1.png</normaloff>
-       <normalon>:/institution1.png</normalon>:/institutionsmall1.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>16</height>
-      </size>
-     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QPushButton" name="dashboard_1">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Accessories/resources.qrc">
+          <normaloff>:/dashboardsmall1.png</normaloff>
+          <normalon>:/dashboardsmall2.png</normalon>:/dashboardsmall1.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>16</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="institution_1">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Accessories/resources.qrc">
+          <normaloff>:/institutionsmall1.png</normaloff>
+          <normalon>:/institutionsmall2.png</normalon>:/institutionsmall1.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>16</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="students_2">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Accessories/resources.qrc">
+          <normaloff>:/studentssmall1.png</normaloff>
+          <normalon>:/studentssmall2.png</normalon>:/studentssmall1.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="teachers_2">
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Accessories/resources.qrc">
+          <normaloff>:/teacherssmall1.png</normaloff>
+          <normalon>:/teacherssmall2.png</normalon>:/teacherssmall1.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="finances_2">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Accessories/resources.qrc">
+          <normaloff>:/financessmall1.png</normaloff>
+          <normalon>:/financessmall2.png</normalon>:/financessmall1.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
-    <widget class="QPushButton" name="students_2">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>160</y>
-       <width>71</width>
-       <height>23</height>
+       <x>-20</x>
+       <y>716</y>
+       <width>115</width>
+       <height>81</height>
       </rect>
      </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="Accessories/resources.qrc">
-       <normaloff>:/studentssmall1.png</normaloff>
-       <normalon>:/students1.png</normalon>:/studentssmall1.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>20</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="teachers_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>200</y>
-       <width>71</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="Accessories/resources.qrc">
-       <normaloff>:/teacherssmall1.png</normaloff>
-       <normalon>:/teachers1.png</normalon>:/teacherssmall1.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>20</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="finances_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>240</y>
-       <width>71</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="Accessories/resources.qrc">
-       <normaloff>:/financessmall1.png</normaloff>
-       <normalon>:/finances1.png</normalon>:/financessmall1.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>20</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="sign_out_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>770</y>
-       <width>71</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="Accessories/resources.qrc">
-       <normaloff>:/signoutsmall1.png</normaloff>:/signoutsmall1.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>20</height>
-      </size>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="settings_2">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>730</y>
-       <width>71</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="Accessories/resources.qrc">
-       <normaloff>:/settingssmall1.png</normaloff>:/settingssmall1.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>20</height>
-      </size>
-     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_11">
+      <item>
+       <widget class="QPushButton" name="settings_2">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Accessories/resources.qrc">
+          <normaloff>:/settingssmall1.png</normaloff>:/settingssmall1.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="sign_out_2">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Accessories/resources.qrc">
+          <normaloff>:/signoutsmall1.png</normaloff>:/signoutsmall1.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>20</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
    <widget class="QWidget" name="widget_2" native="true">
@@ -289,41 +274,11 @@ background-color: rgb(0, 0, 0);
 color:white;
 }
 QPushButton{
+height:30px;
 border:none;
+
 }</string>
     </property>
-    <widget class="QPushButton" name="dashboard_2">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>80</y>
-       <width>121</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="Accessories/resources.qrc">
-       <normaloff>:/dashboard2.png</normaloff>:/dashboard2.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>60</height>
-      </size>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
@@ -362,529 +317,588 @@ border:none;
       <string>TextLabel</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="institution_2">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>120</y>
-       <width>121</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="Accessories/resources.qrc">
-       <normaloff>:/institution2.png</normaloff>:/institution2.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>95</width>
-       <height>45</height>
-      </size>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="sign_out_1">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>730</y>
-       <width>121</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="Accessories/resources.qrc">
-       <normaloff>:/settings2.png</normaloff>
-       <normalon>:/settings1.png</normalon>:/settings2.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>60</height>
-      </size>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_14">
-     <property name="geometry">
-      <rect>
-       <x>60</x>
-       <y>770</y>
-       <width>121</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="icon">
-      <iconset resource="Accessories/resources.qrc">
-       <normaloff>:/signout2.png</normaloff>
-       <normalon>:/signout1.png</normalon>:/signout2.png</iconset>
-     </property>
-     <property name="iconSize">
-      <size>
-       <width>100</width>
-       <height>60</height>
-      </size>
-     </property>
-     <property name="checkable">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QFrame" name="students">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>170</y>
+       <y>720</y>
        <width>241</width>
-       <height>141</height>
+       <height>91</height>
       </rect>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <widget class="QPushButton" name="pushButton_15">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>121</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
+     <layout class="QVBoxLayout" name="verticalLayout_9">
+      <item>
+       <widget class="QPushButton" name="setting_1">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+padding-left:-65px;
+}
+
+QPushButton:checked{
 	background-color:white;
 	borde-radius:3px;
 }</string>
-      </property>
-      <property name="text">
-       <string>Customer Information</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_16">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>80</y>
-        <width>121</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Accessories/resources.qrc">
+          <normaloff>:/settings2.png</normaloff>
+          <normalon>:/settings1.png</normalon>:/settings2.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="sign_out_1">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+padding-left:-65px;
+}
+
+QPushButton:checked{
 	background-color:white;
 	borde-radius:3px;
 }</string>
-      </property>
-      <property name="text">
-       <string>Customer Payments</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_17">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>120</y>
-        <width>121</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-      </property>
-      <property name="text">
-       <string>Customer Transactions</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_10">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>0</y>
-        <width>171</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="Accessories/resources.qrc">
-        <normaloff>:/students3.png</normaloff>
-        <normalon>:/students4.png</normalon>:/students3.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>200</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QFrame" name="students_dropdown">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>30</y>
-        <width>141</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-     <zorder>students_dropdown</zorder>
-     <zorder>pushButton_15</zorder>
-     <zorder>pushButton_16</zorder>
-     <zorder>pushButton_17</zorder>
-     <zorder>pushButton_10</zorder>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Accessories/resources.qrc">
+          <normaloff>:/signout2.png</normaloff>
+          <normalon>:/signout1.png</normalon>:/signout2.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
-    <widget class="QFrame" name="finances">
-     <property name="enabled">
-      <bool>false</bool>
-     </property>
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>470</y>
+       <y>91</y>
        <width>241</width>
-       <height>161</height>
+       <height>551</height>
       </rect>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <widget class="QPushButton" name="pushButton_21">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>121</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
+     <layout class="QVBoxLayout" name="verticalLayout_10">
+      <item>
+       <widget class="QPushButton" name="dashboard_2">
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+padding-left:-60px;
+}
+
+QPushButton:checked{
 	background-color:white;
 	borde-radius:3px;
 }</string>
-      </property>
-      <property name="text">
-       <string>Budgets</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_22">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>80</y>
-        <width>121</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Accessories/resources.qrc">
+          <normaloff>:/dashboard2.png</normaloff>
+          <normalon>:/dashboard1.png</normalon>:/dashboard2.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>100</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="institution_2">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+padding-left:-65px;
+}
+
+QPushButton:checked{
 	background-color:white;
 	borde-radius:3px;
 }</string>
-      </property>
-      <property name="text">
-       <string>Expenses</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_23">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>120</y>
-        <width>121</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
-	background-color:white;
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="Accessories/resources.qrc">
+          <normaloff>:/institution2.png</normaloff>
+          <normalon>:/institution1.png</normalon>:/institution2.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>95</width>
+          <height>45</height>
+         </size>
+        </property>
+        <property name="checkable">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="students">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="pushButton_10">
+           <property name="minimumSize">
+            <size>
+             <width>204</width>
+             <height>69</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton:checked{
+
 	borde-radius:3px;
 }</string>
-      </property>
-      <property name="text">
-       <string>Business Overview</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_12">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>0</y>
-        <width>171</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
-	background-color:white;
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="Accessories/resources.qrc">
+             <normaloff>:/students3.png</normaloff>
+             <normalon>:/students4.png</normalon>:/students3.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>200</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="students_dropdown">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <widget class="QPushButton" name="pushButton_17">
+            <property name="geometry">
+             <rect>
+              <x>1</x>
+              <y>61</y>
+              <width>241</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+padding-left:50px;
+}
+
+QPushButton:hover{
+color:#12B298
+}</string>
+            </property>
+            <property name="text">
+             <string>Customer Transactions</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_16">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>31</y>
+              <width>241</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+padding-left:35px;
+}
+
+QPushButton:hover{
+color:#12B298
+}</string>
+            </property>
+            <property name="text">
+             <string>Customer Payments</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_15">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>1</y>
+              <width>241</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+padding-left:45px;
+}
+
+QPushButton:hover{
+color:#12B298
+}</string>
+            </property>
+            <property name="text">
+             <string>Customer Information</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="teachers">
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_6">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="pushButton_11">
+           <property name="minimumSize">
+            <size>
+             <width>204</width>
+             <height>69</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton:checked{
+	
 	borde-radius:3px;
 }</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="Accessories/resources.qrc">
-        <normaloff>:/finances3.png</normaloff>
-        <normalon>:/finances4.png</normalon>:/finances3.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>200</width>
-        <height>100</height>
-       </size>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QFrame" name="finances_dropdown">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>30</y>
-        <width>141</width>
-        <height>121</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-     <zorder>finances_dropdown</zorder>
-     <zorder>pushButton_21</zorder>
-     <zorder>pushButton_22</zorder>
-     <zorder>pushButton_23</zorder>
-     <zorder>pushButton_12</zorder>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="Accessories/resources.qrc">
+             <normaloff>:/teachers3.png</normaloff>
+             <normalon>:/teachers4.png</normalon>:/teachers3.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>200</width>
+             <height>60</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="teachers_dropdown">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <widget class="QPushButton" name="pushButton_20">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>60</y>
+              <width>241</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+padding-left:28px;
+}
+
+QPushButton:hover{
+color:#12B298
+}</string>
+            </property>
+            <property name="text">
+             <string>Staff Transactions</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_19">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>30</y>
+              <width>241</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+padding-left:0px;
+}
+
+QPushButton:hover{
+color:#12B298
+}</string>
+            </property>
+            <property name="text">
+             <string>Staff Salaries</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_18">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>241</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+padding-left:20px;
+}
+
+QPushButton:hover{
+color:#12B298
+}</string>
+            </property>
+            <property name="text">
+             <string>Staff Information</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="finances">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="pushButton_12">
+           <property name="minimumSize">
+            <size>
+             <width>204</width>
+             <height>69</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton:checked{
+
+	borde-radius:3px;
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="Accessories/resources.qrc">
+             <normaloff>:/finances3.png</normaloff>
+             <normalon>:/finances4.png</normalon>:/finances3.png</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>200</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="checkable">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="finances_dropdown">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <widget class="QPushButton" name="pushButton_21">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>241</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+padding-left:-27px;
+}
+
+QPushButton:hover{
+color:#12B298
+}</string>
+            </property>
+            <property name="text">
+             <string>Budgets</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_22">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>30</y>
+              <width>241</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+padding-left:-19px;
+}
+
+QPushButton:hover{
+color:#12B298
+}</string>
+            </property>
+            <property name="text">
+             <string>Expenses</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+           <widget class="QPushButton" name="pushButton_23">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>60</y>
+              <width>241</width>
+              <height>28</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton{
+padding-left:32px;
+}
+
+QPushButton:hover{
+color:#12B298
+}</string>
+            </property>
+            <property name="text">
+             <string>Business Overview</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
     </widget>
-    <widget class="QFrame" name="teachers">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>320</y>
-       <width>241</width>
-       <height>141</height>
-      </rect>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <widget class="QPushButton" name="pushButton_18">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>40</y>
-        <width>121</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-      </property>
-      <property name="text">
-       <string>Staff Information</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_19">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>80</y>
-        <width>121</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-      </property>
-      <property name="text">
-       <string>Staff Salaries</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_20">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>120</y>
-        <width>121</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-      </property>
-      <property name="text">
-       <string>Staff Transactions</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_11">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>0</y>
-        <width>171</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton:checked{
-	background-color:white;
-	borde-radius:3px;
-}</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="icon">
-       <iconset resource="Accessories/resources.qrc">
-        <normaloff>:/teachers3.png</normaloff>
-        <normalon>:/teachers4.png</normalon>:/teachers3.png</iconset>
-      </property>
-      <property name="iconSize">
-       <size>
-        <width>200</width>
-        <height>60</height>
-       </size>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QFrame" name="teachers_dropdown">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>30</y>
-        <width>151</width>
-        <height>131</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-     </widget>
-     <zorder>teachers_dropdown</zorder>
-     <zorder>pushButton_18</zorder>
-     <zorder>pushButton_19</zorder>
-     <zorder>pushButton_20</zorder>
-     <zorder>pushButton_11</zorder>
-    </widget>
+    <zorder>layoutWidget</zorder>
+    <zorder>layoutWidget</zorder>
     <zorder>label_2</zorder>
     <zorder>label_3</zorder>
-    <zorder>sign_out_1</zorder>
-    <zorder>pushButton_14</zorder>
-    <zorder>students</zorder>
-    <zorder>finances</zorder>
-    <zorder>teachers</zorder>
-    <zorder>dashboard_2</zorder>
-    <zorder>institution_2</zorder>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -895,7 +909,7 @@ border:none;
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2"/>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -906,7 +920,7 @@ border:none;
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3"/>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -919,7 +933,7 @@ border:none;
      <item>
       <widget class="QWidget" name="widget_4" native="true">
        <property name="enabled">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout_3">
         <item>
@@ -988,7 +1002,7 @@ border:none;
         <item>
          <spacer name="horizontalSpacer">
           <property name="orientation">
-           <enum>Qt::Horizontal</enum>
+           <enum>Qt::Vertical</enum>
           </property>
           <property name="sizeHint" stdset="0">
            <size>
@@ -1050,7 +1064,7 @@ border-radius:10px;
      <item>
       <widget class="QWidget" name="widget_3" native="true">
        <property name="enabled">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="minimumSize">
         <size>
@@ -1072,8 +1086,8 @@ border-radius:10px;
          <rect>
           <x>9</x>
           <y>10</y>
-          <width>821</width>
-          <height>721</height>
+          <width>232</width>
+          <height>188</height>
          </rect>
         </property>
         <property name="maximumSize">
@@ -1314,7 +1328,7 @@ border-radius:10px;
      <x>0</x>
      <y>0</y>
      <width>1212</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
@@ -1351,8 +1365,8 @@ border-radius:10px;
      <y>370</y>
     </hint>
     <hint type="destinationlabel">
-     <x>280</x>
-     <y>410</y>
+     <x>281</x>
+     <y>505</y>
     </hint>
    </hints>
   </connection>
@@ -1367,8 +1381,8 @@ border-radius:10px;
      <y>526</y>
     </hint>
     <hint type="destinationlabel">
-     <x>280</x>
-     <y>561</y>
+     <x>281</x>
+     <y>666</y>
     </hint>
    </hints>
   </connection>
@@ -1431,8 +1445,8 @@ border-radius:10px;
      <y>367</y>
     </hint>
     <hint type="destinationlabel">
-     <x>73</x>
-     <y>258</y>
+     <x>74</x>
+     <y>293</y>
     </hint>
    </hints>
   </connection>
@@ -1447,13 +1461,13 @@ border-radius:10px;
      <y>517</y>
     </hint>
     <hint type="destinationlabel">
-     <x>55</x>
-     <y>292</y>
+     <x>56</x>
+     <y>342</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>sign_out_1</sender>
+   <sender>setting_1</sender>
    <signal>toggled(bool)</signal>
    <receiver>settings_2</receiver>
    <slot>setChecked(bool)</slot>
@@ -1463,13 +1477,13 @@ border-radius:10px;
      <y>778</y>
     </hint>
     <hint type="destinationlabel">
-     <x>65</x>
-     <y>787</y>
+     <x>66</x>
+     <y>775</y>
     </hint>
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_14</sender>
+   <sender>sign_out_1</sender>
    <signal>toggled(bool)</signal>
    <receiver>sign_out_2</receiver>
    <slot>setChecked(bool)</slot>
@@ -1479,8 +1493,8 @@ border-radius:10px;
      <y>814</y>
     </hint>
     <hint type="destinationlabel">
-     <x>55</x>
-     <y>828</y>
+     <x>56</x>
+     <y>815</y>
     </hint>
    </hints>
   </connection>
@@ -1491,8 +1505,8 @@ border-radius:10px;
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>53</x>
-     <y>821</y>
+     <x>54</x>
+     <y>815</y>
     </hint>
     <hint type="destinationlabel">
      <x>52</x>
@@ -1501,7 +1515,7 @@ border-radius:10px;
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_14</sender>
+   <sender>sign_out_1</sender>
    <signal>toggled(bool)</signal>
    <receiver>MainWindow</receiver>
    <slot>close()</slot>
@@ -1523,8 +1537,8 @@ border-radius:10px;
    <slot>setHidden(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>370</x>
-     <y>91</y>
+     <x>383</x>
+     <y>84</y>
     </hint>
     <hint type="destinationlabel">
      <x>311</x>
