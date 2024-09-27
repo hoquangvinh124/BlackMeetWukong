@@ -1176,12 +1176,12 @@ QTableWidget{
             </column>
             <column>
              <property name="text">
-              <string>Birthday</string>
+              <string>Models</string>
              </property>
             </column>
             <column>
              <property name="text">
-              <string>Models</string>
+              <string>Birthday</string>
              </property>
             </column>
             <column>
@@ -1210,7 +1210,7 @@ QTableWidget{
              </property>
             </column>
            </widget>
-           <widget class="QWidget" name="">
+           <widget class="QWidget" name="layoutWidget">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -1326,7 +1326,7 @@ QTableWidget{
              </item>
             </layout>
            </widget>
-           <widget class="QWidget" name="">
+           <widget class="QWidget" name="layoutWidget">
             <property name="geometry">
              <rect>
               <x>20</x>
