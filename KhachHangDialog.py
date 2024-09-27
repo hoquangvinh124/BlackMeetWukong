@@ -8,6 +8,8 @@
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6.QtWidgets import QDialog
+import pymysql
+from random import randint
 
 
 class Ui_KhachHangDialog(QDialog):
@@ -276,3 +278,80 @@ class Ui_KhachHangDialog(QDialog):
         self.label_14.setText(_translate("KhachHangDialog", "Email"))
         self.addpushButton.setText(_translate("KhachHangDialog", "Add"))
         self.cancelpushButton.setText(_translate("KhachHangDialog", "Cancel"))
+
+    def create_connection(self):
+        self.mydb = pymysql.connect(
+                host='sql12.freemysqlhosting.net',
+                user='sql12733511',
+                password='fHsPCCsLww',
+                database='sql12733511',
+                port=3306
+                )
+        # Tao cursor
+        cursor = self.mydb.cursor()
+        return self.mydb
+
+    # TAO BANG KHACH HANG:
+
+    def create_customer_table(self):
+        cursor = self.create_connection().cursor
+
+        create_customer_table_query = f"""
+        CREATE TABLE IF NOT EXISTS customer_table(
+                names TEXT,
+                customer_id VARCHAR(15) PRIMARY KEY,
+                gender TEXT,
+                nails TEXT,
+                birthday TEXT,
+                age INT,
+                address TEXT,
+                phone_number VARCHAR(15),
+                email VARCHAR(15)
+        )"""
+        cursor = self.mydb.cursor()
+        cursor.execute(create_customer_table_query)
+
+        # Commit
+        self.mydb.commit()
+        self.mydb.close()
+
+    # THEM KHACH HANG
+    def insert_new_customer(self):
+
+        try:
+            cursor = self.create_connection().cursor()
+
+            gender = self.gender_comboBox.currentText()
+            customer_id = self.generate_customerId(gender)
+
+    def generate_customerId(self,gender):
+
+            cursor = self.create_connection().cursor()
+
+            while True:
+                 if gender == "Male":
+                        id_start_value = '24' + '/U/M'
+                 else:
+                        id_start_value = '24' + '/U/F'
+
+                 random_value = self.generate_randomNumber()
+                 customer_id = id_start_value + random_value
+
+                #Kiem tra neu so da ton tai trong bang
+                cursor.execute(f'SELECT customer_id FROM customer_table')
+
+
+    def generate_randomNumber(self):
+
+            number = randint(1,1000)
+            random_number = f'{number:04d}'
+            return random_number
+
+
+
+
+
+
+
+
+

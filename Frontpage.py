@@ -1,6 +1,9 @@
 from PyQt6.QtWidgets import QMainWindow, QMenu
 from PyQt6.QtGui import QAction
+from pymysql.constants.FIELD_TYPE import VARCHAR
+
 from MainUI import Ui_MainWindow
+import pymysql
 
 class MySideBar(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -41,6 +44,12 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         self.students_1.clicked.connect(self.students_context_menu)
         self.teachers_1.clicked.connect(self.teachers_context_menu)
         self.finances_1.clicked.connect(self.finances_context_menu)
+
+    #Connect to db
+        self.create_connection()
+
+    #Tao bang khach hang
+        self.create_customer_table()
 
     #Methods to switch to different pages
     def switch_to_dashboard_page(self):
@@ -138,4 +147,45 @@ class MySideBar(QMainWindow, Ui_MainWindow):
             self.switch_to_expensesInfo_page()
         elif text == 'Business Overview':
             self.switch_to_businessOverview_page()
+
+
+    def create_connection(self):
+        self.mydb = pymysql.connect(
+            host='sql12.freemysqlhosting.net',
+            user='sql12733511',
+            password='fHsPCCsLww',
+            database='sql12733511',
+            port=3306
+        )
+        #Tao cursor
+        cursor = self.mydb.cursor()
+        return self.mydb
+
+    #TAO BANG KHACH HANG:
+
+    def create_customer_table(self):
+        cursor=self.create_connection().cursor
+
+        create_customer_table_query = f"""
+            CREATE TABLE IF NOT EXISTS customer_table(
+                names TEXT,
+                customer_id VARCHAR(15) PRIMARY KEY,
+                gender TEXT,
+                nails TEXT,
+                birthday TEXT,
+                age INT,
+                address TEXT,
+                phone_number VARCHAR(15),
+                email VARCHAR(15)
+        )"""
+        cursor=self.mydb.cursor()
+        cursor.execute(create_customer_table_query)
+
+        #Commit
+        self.mydb.commit()
+        self.mydb.close()
+
+
+
+
 
