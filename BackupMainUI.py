@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'C:\Users\ACER\PycharmProjects\BlackMeetWukong\MainUI.ui'
+# Form implementation generated from reading ui file 'D:\ProjectTotNghiep\MainUI.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.1
 #
@@ -16,392 +16,456 @@ class Ui_MainWindow(object):
         MainWindow.setMinimumSize(QtCore.QSize(1212, 831))
         MainWindow.setMaximumSize(QtCore.QSize(1212, 831))
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
-        self.centralwidget.setEnabled(False)
+        self.centralwidget.setEnabled(True)
         self.centralwidget.setObjectName("centralwidget")
-        self.widget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.widget.setEnabled(False)
-        self.widget.setGeometry(QtCore.QRect(10, 0, 71, 831))
-        self.widget.setMinimumSize(QtCore.QSize(71, 0))
-        self.widget.setMaximumSize(QtCore.QSize(71, 16777215))
-        self.widget.setStyleSheet("QWidget{\n"
+        self.layoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
+        self.layoutWidget.setGeometry(QtCore.QRect(0, 0, 1211, 818))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.layoutWidget)
+        self.gridLayout.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.setObjectName("gridLayout")
+        self.icon_only_widget = QtWidgets.QWidget(parent=self.layoutWidget)
+        self.icon_only_widget.setEnabled(True)
+        self.icon_only_widget.setMinimumSize(QtCore.QSize(71, 0))
+        self.icon_only_widget.setMaximumSize(QtCore.QSize(71, 800))
+        self.icon_only_widget.setStyleSheet("QWidget{\n"
 "background-color: rgb(0, 0, 0);\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"background-color:white;\n"
+"border-radius:3px;\n"
 "}")
-        self.widget.setObjectName("widget")
-        self.dashboard_1 = QtWidgets.QPushButton(parent=self.widget)
-        self.dashboard_1.setGeometry(QtCore.QRect(0, 80, 75, 23))
-        self.dashboard_1.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.dashboard_1.setText("")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/dashboardsmall1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon.addPixmap(QtGui.QPixmap(":/dashboard1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
-        self.dashboard_1.setIcon(icon)
-        self.dashboard_1.setIconSize(QtCore.QSize(16, 16))
-        self.dashboard_1.setObjectName("dashboard_1")
-        self.label_4 = QtWidgets.QLabel(parent=self.widget)
-        self.label_4.setGeometry(QtCore.QRect(20, 20, 40, 40))
+        self.icon_only_widget.setObjectName("icon_only_widget")
+        self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.icon_only_widget)
+        self.verticalLayout_12.setObjectName("verticalLayout_12")
+        self.label_4 = QtWidgets.QLabel(parent=self.icon_only_widget)
         self.label_4.setMaximumSize(QtCore.QSize(40, 40))
         self.label_4.setText("")
         self.label_4.setPixmap(QtGui.QPixmap(":/logo.png"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
-        self.institution_1 = QtWidgets.QPushButton(parent=self.widget)
-        self.institution_1.setGeometry(QtCore.QRect(0, 120, 71, 23))
-        self.institution_1.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
+        self.verticalLayout_12.addWidget(self.label_4)
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_5.setContentsMargins(-1, 25, -1, -1)
+        self.verticalLayout_5.setSpacing(20)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.dashboard_1 = QtWidgets.QPushButton(parent=self.icon_only_widget)
+        self.dashboard_1.setMinimumSize(QtCore.QSize(0, 28))
+        self.dashboard_1.setStyleSheet("")
+        self.dashboard_1.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/dashboardsmall1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(":/dashboardsmall2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.dashboard_1.setIcon(icon)
+        self.dashboard_1.setIconSize(QtCore.QSize(100, 19))
+        self.dashboard_1.setCheckable(True)
+        self.dashboard_1.setObjectName("dashboard_1")
+        self.verticalLayout_5.addWidget(self.dashboard_1)
+        self.institution_1 = QtWidgets.QPushButton(parent=self.icon_only_widget)
+        self.institution_1.setMinimumSize(QtCore.QSize(0, 28))
+        self.institution_1.setStyleSheet("")
         self.institution_1.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/institutionsmall1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon1.addPixmap(QtGui.QPixmap(":/institution1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        icon1.addPixmap(QtGui.QPixmap(":/institutionsmall2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
         self.institution_1.setIcon(icon1)
-        self.institution_1.setIconSize(QtCore.QSize(100, 16))
+        self.institution_1.setIconSize(QtCore.QSize(100, 18))
+        self.institution_1.setCheckable(True)
         self.institution_1.setObjectName("institution_1")
-        self.students_2 = QtWidgets.QPushButton(parent=self.widget)
-        self.students_2.setGeometry(QtCore.QRect(0, 160, 71, 23))
-        self.students_2.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.students_2.setText("")
+        self.verticalLayout_5.addWidget(self.institution_1)
+        self.students_1 = QtWidgets.QPushButton(parent=self.icon_only_widget)
+        self.students_1.setStyleSheet("")
+        self.students_1.setText("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap(":/studentssmall1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon2.addPixmap(QtGui.QPixmap(":/students1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
-        self.students_2.setIcon(icon2)
-        self.students_2.setIconSize(QtCore.QSize(100, 20))
-        self.students_2.setObjectName("students_2")
-        self.teachers_2 = QtWidgets.QPushButton(parent=self.widget)
-        self.teachers_2.setGeometry(QtCore.QRect(0, 200, 71, 23))
-        self.teachers_2.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.teachers_2.setText("")
+        icon2.addPixmap(QtGui.QPixmap(":/studentssmall2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.students_1.setIcon(icon2)
+        self.students_1.setIconSize(QtCore.QSize(100, 20))
+        self.students_1.setCheckable(True)
+        self.students_1.setObjectName("students_1")
+        self.verticalLayout_5.addWidget(self.students_1)
+        self.teachers_1 = QtWidgets.QPushButton(parent=self.icon_only_widget)
+        self.teachers_1.setStyleSheet("")
+        self.teachers_1.setText("")
         icon3 = QtGui.QIcon()
         icon3.addPixmap(QtGui.QPixmap(":/teacherssmall1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon3.addPixmap(QtGui.QPixmap(":/teachers1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
-        self.teachers_2.setIcon(icon3)
-        self.teachers_2.setIconSize(QtCore.QSize(100, 20))
-        self.teachers_2.setObjectName("teachers_2")
-        self.finances_2 = QtWidgets.QPushButton(parent=self.widget)
-        self.finances_2.setGeometry(QtCore.QRect(0, 240, 71, 23))
-        self.finances_2.setText("")
+        icon3.addPixmap(QtGui.QPixmap(":/teacherssmall2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.teachers_1.setIcon(icon3)
+        self.teachers_1.setIconSize(QtCore.QSize(100, 20))
+        self.teachers_1.setCheckable(True)
+        self.teachers_1.setObjectName("teachers_1")
+        self.verticalLayout_5.addWidget(self.teachers_1)
+        self.finances_1 = QtWidgets.QPushButton(parent=self.icon_only_widget)
+        self.finances_1.setText("")
         icon4 = QtGui.QIcon()
         icon4.addPixmap(QtGui.QPixmap(":/financessmall1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon4.addPixmap(QtGui.QPixmap(":/finances1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
-        self.finances_2.setIcon(icon4)
-        self.finances_2.setIconSize(QtCore.QSize(100, 20))
-        self.finances_2.setObjectName("finances_2")
-        self.sign_out_2 = QtWidgets.QPushButton(parent=self.widget)
-        self.sign_out_2.setGeometry(QtCore.QRect(0, 770, 71, 23))
-        self.sign_out_2.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/signoutsmall1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.sign_out_2.setIcon(icon5)
-        self.sign_out_2.setIconSize(QtCore.QSize(100, 20))
-        self.sign_out_2.setObjectName("sign_out_2")
-        self.settings_2 = QtWidgets.QPushButton(parent=self.widget)
-        self.settings_2.setGeometry(QtCore.QRect(0, 730, 71, 23))
+        icon4.addPixmap(QtGui.QPixmap(":/financessmall2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.finances_1.setIcon(icon4)
+        self.finances_1.setIconSize(QtCore.QSize(100, 20))
+        self.finances_1.setCheckable(True)
+        self.finances_1.setObjectName("finances_1")
+        self.verticalLayout_5.addWidget(self.finances_1)
+        self.verticalLayout_12.addLayout(self.verticalLayout_5)
+        spacerItem = QtWidgets.QSpacerItem(20, 378, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_12.addItem(spacerItem)
+        self.verticalLayout_11 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_11.setSpacing(15)
+        self.verticalLayout_11.setObjectName("verticalLayout_11")
+        self.settings_2 = QtWidgets.QPushButton(parent=self.icon_only_widget)
         self.settings_2.setText("")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/settingssmall1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.settings_2.setIcon(icon6)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(":/settingssmall1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon5.addPixmap(QtGui.QPixmap(":/settingssmall2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.settings_2.setIcon(icon5)
         self.settings_2.setIconSize(QtCore.QSize(100, 20))
+        self.settings_2.setCheckable(True)
         self.settings_2.setObjectName("settings_2")
-        self.widget_2 = QtWidgets.QWidget(parent=self.centralwidget)
-        self.widget_2.setGeometry(QtCore.QRect(90, 0, 244, 831))
-        self.widget_2.setStyleSheet("QWidget{\n"
+        self.verticalLayout_11.addWidget(self.settings_2)
+        self.sign_out_2 = QtWidgets.QPushButton(parent=self.icon_only_widget)
+        self.sign_out_2.setText("")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(":/signoutsmall1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon6.addPixmap(QtGui.QPixmap(":/signoutsmall2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.sign_out_2.setIcon(icon6)
+        self.sign_out_2.setIconSize(QtCore.QSize(100, 20))
+        self.sign_out_2.setCheckable(True)
+        self.sign_out_2.setObjectName("sign_out_2")
+        self.verticalLayout_11.addWidget(self.sign_out_2)
+        self.verticalLayout_12.addLayout(self.verticalLayout_11)
+        self.gridLayout.addWidget(self.icon_only_widget, 0, 0, 1, 1)
+        self.icon_text_widget = QtWidgets.QWidget(parent=self.layoutWidget)
+        self.icon_text_widget.setMaximumSize(QtCore.QSize(16777215, 800))
+        self.icon_text_widget.setStyleSheet("QWidget{\n"
 "background-color: rgb(0, 0, 0);\n"
 "color:white;\n"
 "}\n"
 "QPushButton{\n"
+"height:30px;\n"
 "border:none;\n"
+"\n"
 "}")
-        self.widget_2.setObjectName("widget_2")
-        self.dashboard_2 = QtWidgets.QPushButton(parent=self.widget_2)
-        self.dashboard_2.setGeometry(QtCore.QRect(60, 80, 121, 23))
-        self.dashboard_2.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.dashboard_2.setText("")
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap(":/dashboard2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.dashboard_2.setIcon(icon7)
-        self.dashboard_2.setIconSize(QtCore.QSize(100, 60))
-        self.dashboard_2.setCheckable(True)
-        self.dashboard_2.setObjectName("dashboard_2")
-        self.label_2 = QtWidgets.QLabel(parent=self.widget_2)
-        self.label_2.setGeometry(QtCore.QRect(30, 20, 40, 40))
+        self.icon_text_widget.setObjectName("icon_text_widget")
+        self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.icon_text_widget)
+        self.verticalLayout_13.setObjectName("verticalLayout_13")
+        self.label_2 = QtWidgets.QLabel(parent=self.icon_text_widget)
         self.label_2.setMaximumSize(QtCore.QSize(40, 40))
         self.label_2.setText("")
         self.label_2.setPixmap(QtGui.QPixmap(":/logo.png"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
-        self.label_3 = QtWidgets.QLabel(parent=self.widget_2)
-        self.label_3.setGeometry(QtCore.QRect(130, 40, 47, 13))
+        self.verticalLayout_13.addWidget(self.label_2)
+        self.label_3 = QtWidgets.QLabel(parent=self.icon_text_widget)
         self.label_3.setObjectName("label_3")
-        self.institution_2 = QtWidgets.QPushButton(parent=self.widget_2)
-        self.institution_2.setGeometry(QtCore.QRect(60, 120, 121, 23))
-        self.institution_2.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
+        self.verticalLayout_13.addWidget(self.label_3)
+        self.verticalLayout_10 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.dashboard_2 = QtWidgets.QPushButton(parent=self.icon_text_widget)
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        self.dashboard_2.setFont(font)
+        self.dashboard_2.setStyleSheet("QPushButton{\n"
+"padding-left:-60px;\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"background-color:white;\n"
+"border-radius:3px;\n"
+"}")
+        self.dashboard_2.setText("")
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap(":/dashboard2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon7.addPixmap(QtGui.QPixmap(":/dashboard1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.dashboard_2.setIcon(icon7)
+        self.dashboard_2.setIconSize(QtCore.QSize(100, 60))
+        self.dashboard_2.setCheckable(True)
+        self.dashboard_2.setObjectName("dashboard_2")
+        self.verticalLayout_10.addWidget(self.dashboard_2)
+        self.institution_2 = QtWidgets.QPushButton(parent=self.icon_text_widget)
+        self.institution_2.setStyleSheet("QPushButton{\n"
+"padding-left:-65px;\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"background-color:white;\n"
+"border-radius:3px;\n"
 "}")
         self.institution_2.setText("")
         icon8 = QtGui.QIcon()
         icon8.addPixmap(QtGui.QPixmap(":/institution2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon8.addPixmap(QtGui.QPixmap(":/institution1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
         self.institution_2.setIcon(icon8)
         self.institution_2.setIconSize(QtCore.QSize(95, 45))
         self.institution_2.setCheckable(True)
         self.institution_2.setObjectName("institution_2")
-        self.sign_out_1 = QtWidgets.QPushButton(parent=self.widget_2)
-        self.sign_out_1.setGeometry(QtCore.QRect(60, 730, 121, 23))
-        self.sign_out_1.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
+        self.verticalLayout_10.addWidget(self.institution_2)
+        self.students = QtWidgets.QFrame(parent=self.icon_text_widget)
+        self.students.setEnabled(True)
+        self.students.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.students.setObjectName("students")
+        self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.students)
+        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_7.setSpacing(0)
+        self.verticalLayout_7.setObjectName("verticalLayout_7")
+        self.students_2 = QtWidgets.QPushButton(parent=self.students)
+        self.students_2.setMinimumSize(QtCore.QSize(204, 30))
+        self.students_2.setStyleSheet("QPushButton:checked{\n"
+"\n"
 "    borde-radius:3px;\n"
 "}")
-        self.sign_out_1.setText("")
+        self.students_2.setText("")
         icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap(":/settings2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon9.addPixmap(QtGui.QPixmap(":/settings1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
-        self.sign_out_1.setIcon(icon9)
+        icon9.addPixmap(QtGui.QPixmap(":/students3.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon9.addPixmap(QtGui.QPixmap(":/students4.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.students_2.setIcon(icon9)
+        self.students_2.setIconSize(QtCore.QSize(200, 60))
+        self.students_2.setCheckable(True)
+        self.students_2.setObjectName("students_2")
+        self.verticalLayout_7.addWidget(self.students_2)
+        self.students_dropdown = QtWidgets.QFrame(parent=self.students)
+        self.students_dropdown.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.students_dropdown.setObjectName("students_dropdown")
+        self.verticalLayout_14 = QtWidgets.QVBoxLayout(self.students_dropdown)
+        self.verticalLayout_14.setSpacing(5)
+        self.verticalLayout_14.setObjectName("verticalLayout_14")
+        self.student_info = QtWidgets.QPushButton(parent=self.students_dropdown)
+        self.student_info.setStyleSheet("QPushButton{\n"
+"padding-left:45px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color:#12B298\n"
+"}")
+        self.student_info.setCheckable(True)
+        self.student_info.setObjectName("student_info")
+        self.verticalLayout_14.addWidget(self.student_info)
+        self.student_payments = QtWidgets.QPushButton(parent=self.students_dropdown)
+        self.student_payments.setStyleSheet("QPushButton{\n"
+"padding-left:35px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color:#12B298\n"
+"}")
+        self.student_payments.setCheckable(True)
+        self.student_payments.setObjectName("student_payments")
+        self.verticalLayout_14.addWidget(self.student_payments)
+        self.student_transactions = QtWidgets.QPushButton(parent=self.students_dropdown)
+        self.student_transactions.setStyleSheet("QPushButton{\n"
+"padding-left:50px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color:#12B298\n"
+"}")
+        self.student_transactions.setCheckable(True)
+        self.student_transactions.setObjectName("student_transactions")
+        self.verticalLayout_14.addWidget(self.student_transactions)
+        self.verticalLayout_7.addWidget(self.students_dropdown)
+        self.verticalLayout_10.addWidget(self.students)
+        self.teachers = QtWidgets.QFrame(parent=self.icon_text_widget)
+        self.teachers.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.teachers.setObjectName("teachers")
+        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.teachers)
+        self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_6.setSpacing(0)
+        self.verticalLayout_6.setObjectName("verticalLayout_6")
+        self.teachers_2 = QtWidgets.QPushButton(parent=self.teachers)
+        self.teachers_2.setMinimumSize(QtCore.QSize(204, 30))
+        self.teachers_2.setStyleSheet("QPushButton:checked{\n"
+"    \n"
+"    borde-radius:3px;\n"
+"}")
+        self.teachers_2.setText("")
+        icon10 = QtGui.QIcon()
+        icon10.addPixmap(QtGui.QPixmap(":/teachers3.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon10.addPixmap(QtGui.QPixmap(":/teachers4.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.teachers_2.setIcon(icon10)
+        self.teachers_2.setIconSize(QtCore.QSize(200, 60))
+        self.teachers_2.setCheckable(True)
+        self.teachers_2.setObjectName("teachers_2")
+        self.verticalLayout_6.addWidget(self.teachers_2)
+        self.teachers_dropdown = QtWidgets.QFrame(parent=self.teachers)
+        self.teachers_dropdown.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.teachers_dropdown.setObjectName("teachers_dropdown")
+        self.verticalLayout_15 = QtWidgets.QVBoxLayout(self.teachers_dropdown)
+        self.verticalLayout_15.setSpacing(5)
+        self.verticalLayout_15.setObjectName("verticalLayout_15")
+        self.teacher_info = QtWidgets.QPushButton(parent=self.teachers_dropdown)
+        self.teacher_info.setStyleSheet("QPushButton{\n"
+"padding-left:20px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color:#12B298\n"
+"}")
+        self.teacher_info.setCheckable(True)
+        self.teacher_info.setObjectName("teacher_info")
+        self.verticalLayout_15.addWidget(self.teacher_info)
+        self.teacher_salaries = QtWidgets.QPushButton(parent=self.teachers_dropdown)
+        self.teacher_salaries.setStyleSheet("QPushButton{\n"
+"padding-left:0px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color:#12B298\n"
+"}")
+        self.teacher_salaries.setCheckable(True)
+        self.teacher_salaries.setObjectName("teacher_salaries")
+        self.verticalLayout_15.addWidget(self.teacher_salaries)
+        self.teacher_transactions = QtWidgets.QPushButton(parent=self.teachers_dropdown)
+        self.teacher_transactions.setStyleSheet("QPushButton{\n"
+"padding-left:28px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color:#12B298\n"
+"}")
+        self.teacher_transactions.setCheckable(True)
+        self.teacher_transactions.setObjectName("teacher_transactions")
+        self.verticalLayout_15.addWidget(self.teacher_transactions)
+        self.verticalLayout_6.addWidget(self.teachers_dropdown)
+        self.verticalLayout_10.addWidget(self.teachers)
+        self.finances = QtWidgets.QFrame(parent=self.icon_text_widget)
+        self.finances.setEnabled(True)
+        self.finances.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.finances.setObjectName("finances")
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.finances)
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.finances_2 = QtWidgets.QPushButton(parent=self.finances)
+        self.finances_2.setMinimumSize(QtCore.QSize(204, 30))
+        self.finances_2.setStyleSheet("QPushButton:checked{\n"
+"\n"
+"    borde-radius:3px;\n"
+"}")
+        self.finances_2.setText("")
+        icon11 = QtGui.QIcon()
+        icon11.addPixmap(QtGui.QPixmap(":/finances3.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon11.addPixmap(QtGui.QPixmap(":/finances4.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.finances_2.setIcon(icon11)
+        self.finances_2.setIconSize(QtCore.QSize(200, 100))
+        self.finances_2.setCheckable(True)
+        self.finances_2.setObjectName("finances_2")
+        self.verticalLayout_8.addWidget(self.finances_2)
+        self.finances_dropdown = QtWidgets.QFrame(parent=self.finances)
+        self.finances_dropdown.setFrameShape(QtWidgets.QFrame.Shape.NoFrame)
+        self.finances_dropdown.setObjectName("finances_dropdown")
+        self.verticalLayout_16 = QtWidgets.QVBoxLayout(self.finances_dropdown)
+        self.verticalLayout_16.setSpacing(5)
+        self.verticalLayout_16.setObjectName("verticalLayout_16")
+        self.budgets = QtWidgets.QPushButton(parent=self.finances_dropdown)
+        self.budgets.setStyleSheet("QPushButton{\n"
+"padding-left:-27px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color:#12B298\n"
+"}")
+        self.budgets.setCheckable(True)
+        self.budgets.setObjectName("budgets")
+        self.verticalLayout_16.addWidget(self.budgets)
+        self.expenses = QtWidgets.QPushButton(parent=self.finances_dropdown)
+        self.expenses.setStyleSheet("QPushButton{\n"
+"padding-left:-19px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color:#12B298\n"
+"}")
+        self.expenses.setCheckable(True)
+        self.expenses.setObjectName("expenses")
+        self.verticalLayout_16.addWidget(self.expenses)
+        self.business_overview = QtWidgets.QPushButton(parent=self.finances_dropdown)
+        self.business_overview.setStyleSheet("QPushButton{\n"
+"padding-left:32px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"color:#12B298\n"
+"}")
+        self.business_overview.setCheckable(True)
+        self.business_overview.setObjectName("business_overview")
+        self.verticalLayout_16.addWidget(self.business_overview)
+        self.verticalLayout_8.addWidget(self.finances_dropdown)
+        self.verticalLayout_10.addWidget(self.finances)
+        self.verticalLayout_13.addLayout(self.verticalLayout_10)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 289, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.verticalLayout_13.addItem(spacerItem1)
+        self.verticalLayout_9 = QtWidgets.QVBoxLayout()
+        self.verticalLayout_9.setSpacing(15)
+        self.verticalLayout_9.setObjectName("verticalLayout_9")
+        self.settings_1 = QtWidgets.QPushButton(parent=self.icon_text_widget)
+        self.settings_1.setStyleSheet("QPushButton{\n"
+"padding-left:-65px;\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"    background-color:white;\n"
+"    border-radius:3px;\n"
+"}")
+        self.settings_1.setText("")
+        icon12 = QtGui.QIcon()
+        icon12.addPixmap(QtGui.QPixmap(":/settings2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon12.addPixmap(QtGui.QPixmap(":/settings1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.settings_1.setIcon(icon12)
+        self.settings_1.setIconSize(QtCore.QSize(100, 60))
+        self.settings_1.setCheckable(True)
+        self.settings_1.setObjectName("settings_1")
+        self.verticalLayout_9.addWidget(self.settings_1)
+        self.sign_out_1 = QtWidgets.QPushButton(parent=self.icon_text_widget)
+        self.sign_out_1.setStyleSheet("QPushButton{\n"
+"padding-left:-65px;\n"
+"}\n"
+"\n"
+"QPushButton:checked{\n"
+"    background-color:white;\n"
+"    border-radius:3px;\n"
+"}")
+        self.sign_out_1.setText("")
+        icon13 = QtGui.QIcon()
+        icon13.addPixmap(QtGui.QPixmap(":/signout2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon13.addPixmap(QtGui.QPixmap(":/signout1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
+        self.sign_out_1.setIcon(icon13)
         self.sign_out_1.setIconSize(QtCore.QSize(100, 60))
         self.sign_out_1.setCheckable(True)
         self.sign_out_1.setObjectName("sign_out_1")
-        self.pushButton_14 = QtWidgets.QPushButton(parent=self.widget_2)
-        self.pushButton_14.setGeometry(QtCore.QRect(60, 770, 121, 23))
-        self.pushButton_14.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_14.setText("")
-        icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap(":/signout2.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon10.addPixmap(QtGui.QPixmap(":/signout1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
-        self.pushButton_14.setIcon(icon10)
-        self.pushButton_14.setIconSize(QtCore.QSize(100, 60))
-        self.pushButton_14.setCheckable(True)
-        self.pushButton_14.setObjectName("pushButton_14")
-        self.students = QtWidgets.QFrame(parent=self.widget_2)
-        self.students.setEnabled(False)
-        self.students.setGeometry(QtCore.QRect(0, 170, 241, 141))
-        self.students.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.students.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.students.setObjectName("students")
-        self.pushButton_15 = QtWidgets.QPushButton(parent=self.students)
-        self.pushButton_15.setGeometry(QtCore.QRect(60, 40, 121, 28))
-        self.pushButton_15.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_15.setCheckable(True)
-        self.pushButton_15.setObjectName("pushButton_15")
-        self.pushButton_16 = QtWidgets.QPushButton(parent=self.students)
-        self.pushButton_16.setGeometry(QtCore.QRect(60, 80, 121, 28))
-        self.pushButton_16.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_16.setCheckable(True)
-        self.pushButton_16.setObjectName("pushButton_16")
-        self.pushButton_17 = QtWidgets.QPushButton(parent=self.students)
-        self.pushButton_17.setGeometry(QtCore.QRect(60, 120, 121, 28))
-        self.pushButton_17.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_17.setCheckable(True)
-        self.pushButton_17.setObjectName("pushButton_17")
-        self.pushButton_10 = QtWidgets.QPushButton(parent=self.students)
-        self.pushButton_10.setGeometry(QtCore.QRect(30, 0, 171, 23))
-        self.pushButton_10.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_10.setText("")
-        icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap(":/students3.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon11.addPixmap(QtGui.QPixmap(":/students4.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
-        self.pushButton_10.setIcon(icon11)
-        self.pushButton_10.setIconSize(QtCore.QSize(200, 60))
-        self.pushButton_10.setCheckable(True)
-        self.pushButton_10.setObjectName("pushButton_10")
-        self.students_dropdown = QtWidgets.QFrame(parent=self.students)
-        self.students_dropdown.setGeometry(QtCore.QRect(50, 30, 141, 121))
-        self.students_dropdown.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.students_dropdown.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.students_dropdown.setObjectName("students_dropdown")
-        self.students_dropdown.raise_()
-        self.pushButton_15.raise_()
-        self.pushButton_16.raise_()
-        self.pushButton_17.raise_()
-        self.pushButton_10.raise_()
-        self.finances = QtWidgets.QFrame(parent=self.widget_2)
-        self.finances.setEnabled(False)
-        self.finances.setGeometry(QtCore.QRect(0, 470, 241, 161))
-        self.finances.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.finances.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.finances.setObjectName("finances")
-        self.pushButton_21 = QtWidgets.QPushButton(parent=self.finances)
-        self.pushButton_21.setGeometry(QtCore.QRect(60, 40, 121, 28))
-        self.pushButton_21.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_21.setCheckable(True)
-        self.pushButton_21.setObjectName("pushButton_21")
-        self.pushButton_22 = QtWidgets.QPushButton(parent=self.finances)
-        self.pushButton_22.setGeometry(QtCore.QRect(60, 80, 121, 28))
-        self.pushButton_22.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_22.setCheckable(True)
-        self.pushButton_22.setObjectName("pushButton_22")
-        self.pushButton_23 = QtWidgets.QPushButton(parent=self.finances)
-        self.pushButton_23.setGeometry(QtCore.QRect(60, 120, 121, 28))
-        self.pushButton_23.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_23.setCheckable(True)
-        self.pushButton_23.setObjectName("pushButton_23")
-        self.pushButton_12 = QtWidgets.QPushButton(parent=self.finances)
-        self.pushButton_12.setGeometry(QtCore.QRect(30, 0, 171, 23))
-        self.pushButton_12.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_12.setText("")
-        icon12 = QtGui.QIcon()
-        icon12.addPixmap(QtGui.QPixmap(":/finances3.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon12.addPixmap(QtGui.QPixmap(":/finances4.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
-        self.pushButton_12.setIcon(icon12)
-        self.pushButton_12.setIconSize(QtCore.QSize(200, 100))
-        self.pushButton_12.setCheckable(True)
-        self.pushButton_12.setObjectName("pushButton_12")
-        self.finances_dropdown = QtWidgets.QFrame(parent=self.finances)
-        self.finances_dropdown.setGeometry(QtCore.QRect(50, 30, 141, 121))
-        self.finances_dropdown.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.finances_dropdown.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.finances_dropdown.setObjectName("finances_dropdown")
-        self.finances_dropdown.raise_()
-        self.pushButton_21.raise_()
-        self.pushButton_22.raise_()
-        self.pushButton_23.raise_()
-        self.pushButton_12.raise_()
-        self.teachers = QtWidgets.QFrame(parent=self.widget_2)
-        self.teachers.setGeometry(QtCore.QRect(0, 320, 241, 141))
-        self.teachers.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.teachers.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.teachers.setObjectName("teachers")
-        self.pushButton_18 = QtWidgets.QPushButton(parent=self.teachers)
-        self.pushButton_18.setGeometry(QtCore.QRect(60, 40, 121, 28))
-        self.pushButton_18.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_18.setCheckable(True)
-        self.pushButton_18.setObjectName("pushButton_18")
-        self.pushButton_19 = QtWidgets.QPushButton(parent=self.teachers)
-        self.pushButton_19.setGeometry(QtCore.QRect(60, 80, 121, 28))
-        self.pushButton_19.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_19.setCheckable(True)
-        self.pushButton_19.setObjectName("pushButton_19")
-        self.pushButton_20 = QtWidgets.QPushButton(parent=self.teachers)
-        self.pushButton_20.setGeometry(QtCore.QRect(60, 120, 121, 28))
-        self.pushButton_20.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_20.setCheckable(True)
-        self.pushButton_20.setObjectName("pushButton_20")
-        self.pushButton_11 = QtWidgets.QPushButton(parent=self.teachers)
-        self.pushButton_11.setGeometry(QtCore.QRect(30, 0, 171, 23))
-        self.pushButton_11.setStyleSheet("QPushButton:checked{\n"
-"    background-color:white;\n"
-"    borde-radius:3px;\n"
-"}")
-        self.pushButton_11.setText("")
-        icon13 = QtGui.QIcon()
-        icon13.addPixmap(QtGui.QPixmap(":/teachers3.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        icon13.addPixmap(QtGui.QPixmap(":/teachers4.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.On)
-        self.pushButton_11.setIcon(icon13)
-        self.pushButton_11.setIconSize(QtCore.QSize(200, 60))
-        self.pushButton_11.setCheckable(True)
-        self.pushButton_11.setObjectName("pushButton_11")
-        self.teachers_dropdown = QtWidgets.QFrame(parent=self.teachers)
-        self.teachers_dropdown.setGeometry(QtCore.QRect(50, 30, 151, 131))
-        self.teachers_dropdown.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.teachers_dropdown.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.teachers_dropdown.setObjectName("teachers_dropdown")
-        self.teachers_dropdown.raise_()
-        self.pushButton_18.raise_()
-        self.pushButton_19.raise_()
-        self.pushButton_20.raise_()
-        self.pushButton_11.raise_()
+        self.verticalLayout_9.addWidget(self.sign_out_1)
+        self.verticalLayout_13.addLayout(self.verticalLayout_9)
         self.label_2.raise_()
         self.label_3.raise_()
-        self.sign_out_1.raise_()
-        self.pushButton_14.raise_()
-        self.students.raise_()
-        self.finances.raise_()
-        self.teachers.raise_()
-        self.dashboard_2.raise_()
-        self.institution_2.raise_()
-        self.widget1 = QtWidgets.QWidget(parent=self.centralwidget)
-        self.widget1.setGeometry(QtCore.QRect(0, 0, 2, 2))
-        self.widget1.setObjectName("widget1")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.widget1)
-        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.widget2 = QtWidgets.QWidget(parent=self.centralwidget)
-        self.widget2.setGeometry(QtCore.QRect(0, 0, 2, 2))
-        self.widget2.setObjectName("widget2")
-        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.widget2)
-        self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.widget3 = QtWidgets.QWidget(parent=self.centralwidget)
-        self.widget3.setGeometry(QtCore.QRect(340, 0, 867, 831))
-        self.widget3.setObjectName("widget3")
-        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.widget3)
-        self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout.addWidget(self.icon_text_widget, 0, 1, 1, 1)
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout()
         self.verticalLayout_4.setObjectName("verticalLayout_4")
-        self.widget_4 = QtWidgets.QWidget(parent=self.widget3)
-        self.widget_4.setEnabled(False)
-        self.widget_4.setObjectName("widget_4")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.widget_4)
+        self.qwww = QtWidgets.QWidget(parent=self.layoutWidget)
+        self.qwww.setEnabled(True)
+        self.qwww.setObjectName("qwww")
+        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.qwww)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.pushButton = QtWidgets.QPushButton(parent=self.widget_4)
-        self.pushButton.setStyleSheet("border:none;")
-        self.pushButton.setText("")
+        self.menu_items = QtWidgets.QPushButton(parent=self.qwww)
+        self.menu_items.setStyleSheet("border:none;")
+        self.menu_items.setText("")
         icon14 = QtGui.QIcon()
         icon14.addPixmap(QtGui.QPixmap(":/menu.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
-        self.pushButton.setIcon(icon14)
-        self.pushButton.setIconSize(QtCore.QSize(29, 35))
-        self.pushButton.setCheckable(True)
-        self.pushButton.setObjectName("pushButton")
-        self.horizontalLayout_2.addWidget(self.pushButton)
+        self.menu_items.setIcon(icon14)
+        self.menu_items.setIconSize(QtCore.QSize(29, 35))
+        self.menu_items.setCheckable(True)
+        self.menu_items.setObjectName("menu_items")
+        self.horizontalLayout_2.addWidget(self.menu_items)
         self.verticalLayout = QtWidgets.QVBoxLayout()
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.label = QtWidgets.QLabel(parent=self.widget_4)
+        self.label = QtWidgets.QLabel(parent=self.qwww)
         font = QtGui.QFont()
         font.setPointSize(15)
         font.setBold(True)
-        font.setWeight(75)
         self.label.setFont(font)
         self.label.setObjectName("label")
         self.verticalLayout.addWidget(self.label)
-        self.label_5 = QtWidgets.QLabel(parent=self.widget_4)
+        self.label_5 = QtWidgets.QLabel(parent=self.qwww)
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_5.setFont(font)
@@ -410,12 +474,12 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.label_5)
         self.horizontalLayout_2.addLayout(self.verticalLayout)
         self.horizontalLayout_3.addLayout(self.horizontalLayout_2)
-        spacerItem = QtWidgets.QSpacerItem(325, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_3.addItem(spacerItem)
+        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_3.addItem(spacerItem2)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setContentsMargins(-1, -1, 20, -1)
         self.horizontalLayout.setObjectName("horizontalLayout")
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.widget_4)
+        self.lineEdit = QtWidgets.QLineEdit(parent=self.qwww)
         self.lineEdit.setMinimumSize(QtCore.QSize(0, 31))
         self.lineEdit.setStyleSheet("QLineEdit{\n"
 "padding-left:20px;\n"
@@ -424,7 +488,7 @@ class Ui_MainWindow(object):
 "}")
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout.addWidget(self.lineEdit)
-        self.label_6 = QtWidgets.QLabel(parent=self.widget_4)
+        self.label_6 = QtWidgets.QLabel(parent=self.qwww)
         self.label_6.setMaximumSize(QtCore.QSize(40, 40))
         self.label_6.setText("")
         self.label_6.setPixmap(QtGui.QPixmap(":/profile.png"))
@@ -432,15 +496,15 @@ class Ui_MainWindow(object):
         self.label_6.setObjectName("label_6")
         self.horizontalLayout.addWidget(self.label_6)
         self.horizontalLayout_3.addLayout(self.horizontalLayout)
-        self.verticalLayout_4.addWidget(self.widget_4)
-        self.widget_3 = QtWidgets.QWidget(parent=self.widget3)
-        self.widget_3.setEnabled(False)
-        self.widget_3.setMinimumSize(QtCore.QSize(841, 741))
-        self.widget_3.setMaximumSize(QtCore.QSize(841, 741))
-        self.widget_3.setStyleSheet("")
-        self.widget_3.setObjectName("widget_3")
-        self.stackedWidget = QtWidgets.QStackedWidget(parent=self.widget_3)
-        self.stackedWidget.setGeometry(QtCore.QRect(9, 10, 821, 721))
+        self.verticalLayout_4.addWidget(self.qwww)
+        self.main_screen_widget = QtWidgets.QWidget(parent=self.layoutWidget)
+        self.main_screen_widget.setEnabled(True)
+        self.main_screen_widget.setMinimumSize(QtCore.QSize(841, 741))
+        self.main_screen_widget.setMaximumSize(QtCore.QSize(841, 800))
+        self.main_screen_widget.setStyleSheet("")
+        self.main_screen_widget.setObjectName("main_screen_widget")
+        self.stackedWidget = QtWidgets.QStackedWidget(parent=self.main_screen_widget)
+        self.stackedWidget.setGeometry(QtCore.QRect(9, 10, 232, 188))
         self.stackedWidget.setMaximumSize(QtCore.QSize(841, 741))
         self.stackedWidget.setObjectName("stackedWidget")
         self.page = QtWidgets.QWidget()
@@ -542,10 +606,11 @@ class Ui_MainWindow(object):
         self.label_17.setFont(font)
         self.label_17.setObjectName("label_17")
         self.stackedWidget.addWidget(self.page_11)
-        self.verticalLayout_4.addWidget(self.widget_3)
+        self.verticalLayout_4.addWidget(self.main_screen_widget)
+        self.gridLayout.addLayout(self.verticalLayout_4, 0, 2, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1212, 21))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 1212, 33))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
@@ -553,35 +618,35 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.pushButton_10.toggled['bool'].connect(self.students_dropdown.setHidden) # type: ignore
-        self.pushButton_11.toggled['bool'].connect(self.teachers_dropdown.setHidden) # type: ignore
-        self.pushButton_12.toggled['bool'].connect(self.finances_dropdown.setHidden) # type: ignore
+        self.students_2.toggled['bool'].connect(self.students_dropdown.setHidden) # type: ignore
+        self.teachers_2.toggled['bool'].connect(self.teachers_dropdown.setHidden) # type: ignore
+        self.finances_2.toggled['bool'].connect(self.finances_dropdown.setHidden) # type: ignore
         self.dashboard_2.toggled['bool'].connect(self.dashboard_1.setChecked) # type: ignore
         self.institution_2.toggled['bool'].connect(self.institution_1.setChecked) # type: ignore
-        self.pushButton_10.toggled['bool'].connect(self.students_2.setChecked) # type: ignore
-        self.pushButton_11.toggled['bool'].connect(self.teachers_2.setChecked) # type: ignore
-        self.pushButton_12.toggled['bool'].connect(self.finances_2.setChecked) # type: ignore
-        self.sign_out_1.toggled['bool'].connect(self.settings_2.setChecked) # type: ignore
-        self.pushButton_14.toggled['bool'].connect(self.sign_out_2.setChecked) # type: ignore
+        self.students_2.toggled['bool'].connect(self.students_1.setChecked) # type: ignore
+        self.teachers_2.toggled['bool'].connect(self.teachers_1.setChecked) # type: ignore
+        self.finances_2.toggled['bool'].connect(self.finances_1.setChecked) # type: ignore
+        self.settings_1.toggled['bool'].connect(self.settings_2.setChecked) # type: ignore
+        self.sign_out_1.toggled['bool'].connect(self.sign_out_2.setChecked) # type: ignore
         self.sign_out_2.toggled['bool'].connect(MainWindow.close) # type: ignore
-        self.pushButton_14.toggled['bool'].connect(MainWindow.close) # type: ignore
-        self.pushButton.toggled['bool'].connect(self.widget_2.setHidden) # type: ignore
-        self.pushButton.toggled['bool'].connect(self.widget.setVisible) # type: ignore
+        self.sign_out_1.toggled['bool'].connect(MainWindow.close) # type: ignore
+        self.menu_items.toggled['bool'].connect(self.icon_text_widget.setHidden) # type: ignore
+        self.menu_items.toggled['bool'].connect(self.icon_only_widget.setVisible) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_3.setText(_translate("MainWindow", "TextLabel"))
-        self.pushButton_15.setText(_translate("MainWindow", "Customer Information"))
-        self.pushButton_16.setText(_translate("MainWindow", "Customer Payments"))
-        self.pushButton_17.setText(_translate("MainWindow", "Customer Transactions"))
-        self.pushButton_21.setText(_translate("MainWindow", "Budgets"))
-        self.pushButton_22.setText(_translate("MainWindow", "Expenses"))
-        self.pushButton_23.setText(_translate("MainWindow", "Business Overview"))
-        self.pushButton_18.setText(_translate("MainWindow", "Staff Information"))
-        self.pushButton_19.setText(_translate("MainWindow", "Staff Salaries"))
-        self.pushButton_20.setText(_translate("MainWindow", "Staff Transactions"))
+        self.student_info.setText(_translate("MainWindow", "Customer Information"))
+        self.student_payments.setText(_translate("MainWindow", "Customer Payments"))
+        self.student_transactions.setText(_translate("MainWindow", "Customer Transactions"))
+        self.teacher_info.setText(_translate("MainWindow", "Staff Information"))
+        self.teacher_salaries.setText(_translate("MainWindow", "Staff Salaries"))
+        self.teacher_transactions.setText(_translate("MainWindow", "Staff Transactions"))
+        self.budgets.setText(_translate("MainWindow", "Budgets"))
+        self.expenses.setText(_translate("MainWindow", "Expenses"))
+        self.business_overview.setText(_translate("MainWindow", "Business Overview"))
         self.label.setText(_translate("MainWindow", "Hello"))
         self.label_5.setText(_translate("MainWindow", "Welcome to your page"))
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "Search Here..."))
