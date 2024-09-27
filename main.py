@@ -1,9 +1,8 @@
 import sys
 
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtWidgets import QApplication
 
 
-from MainUI import Ui_MainWindow
 import resources_rc
 from Frontpage import MySideBar
 

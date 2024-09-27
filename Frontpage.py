@@ -38,9 +38,9 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         self.settings_2.clicked.connect(self.switch_to_settings_page)
 
     #Connect Buttons to respective context menus
-        self.students_1.clicked.connect(self.students_context_menu())
-        self.teachers_1.clicked.connect(self.teachers_context_menu())
-        self.finances_1.clicked.connect(self.finances_context_menu())
+        self.students_1.clicked.connect(self.students_context_menu)
+        self.teachers_1.clicked.connect(self.teachers_context_menu)
+        self.finances_1.clicked.connect(self.finances_context_menu)
 
     #Methods to switch to different pages
     def switch_to_dashboard_page(self):
@@ -81,20 +81,20 @@ class MySideBar(QMainWindow, Ui_MainWindow):
 
     #Methods to show context menus
     def students_context_menu(self):
-        self.show_custom_context_menu(self.students_1 ['Customer Information','Customer Payments','Customer Transactions'])
+        self.show_custom_context_menu(self.students_1, ['Customer Information','Customer Payments','Customer Transactions'])
 
     def teachers_context_menu(self):
-        self.show_custom_context_menu(self.teachers_1 ['Staff Information','Staff Salaries','Staff Transactions'])
+        self.show_custom_context_menu(self.teachers_1,['Staff Information','Staff Salaries','Staff Transactions'])
 
     def finances_context_menu(self):
-        self.show_custom_context_menu(self.finances_1 ['Budgets','Expenses','Business Overview'])
+        self.show_custom_context_menu(self.finances_1, ['Budgets','Expenses','Business Overview'])
 
     def show_custom_context_menu(self, button, menu_items):
 
-            menu = QMenu(self)
+        menu = QMenu(self)
 
-            #Set style for the menu
-            menu.setStyleSheet('''
+        #Set style for the menu
+        menu.setStyleSheet('''
                                 QMenu{
                                 background-color: black;
                                 color: white;
@@ -106,15 +106,15 @@ class MySideBar(QMainWindow, Ui_MainWindow):
                                 }
                             
                                 ''')
-            #Add actions to the menu
-            for item_text in menu_items:
-                action=QAction(item_text,self)
-                action.triggered.connect(self.handle_menu_item_click)
-                menu.addAction(action)
+        #Add actions to the menu
+        for item_text in menu_items:
+            action=QAction(item_text,self)
+            action.triggered.connect(self.handle_menu_item_click)
+            menu.addAction(action)
 
-            #Show the menu
-            menu.move(button.mapToGlobal(button.rect().topRight()))
-            menu.exec()
+        #Show the menu
+        menu.move(button.mapToGlobal(button.rect().topRight()))
+        menu.exec()
 
     def handle_menu_item_click(self):
 
