@@ -1034,10 +1034,10 @@ border-radius:10px;
          <widget class="QStackedWidget" name="stackedWidget">
           <property name="geometry">
            <rect>
-            <x>9</x>
-            <y>10</y>
-            <width>232</width>
-            <height>188</height>
+            <x>0</x>
+            <y>0</y>
+            <width>841</width>
+            <height>701</height>
            </rect>
           </property>
           <property name="maximumSize">
@@ -1046,19 +1046,25 @@ border-radius:10px;
             <height>741</height>
            </size>
           </property>
+          <property name="currentIndex">
+           <number>2</number>
+          </property>
           <widget class="QWidget" name="page">
            <widget class="QLabel" name="label_7">
             <property name="geometry">
              <rect>
-              <x>330</x>
-              <y>210</y>
-              <width>161</width>
+              <x>320</x>
+              <y>240</y>
+              <width>221</width>
               <height>141</height>
              </rect>
             </property>
             <property name="font">
              <font>
+              <family>Poppins</family>
               <pointsize>25</pointsize>
+              <italic>true</italic>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
@@ -1090,20 +1096,394 @@ border-radius:10px;
            <widget class="QLabel" name="label_9">
             <property name="geometry">
              <rect>
-              <x>250</x>
-              <y>210</y>
-              <width>331</width>
-              <height>141</height>
+              <x>20</x>
+              <y>0</y>
+              <width>221</width>
+              <height>51</height>
              </rect>
             </property>
             <property name="font">
              <font>
-              <pointsize>25</pointsize>
+              <family>Poppins</family>
+              <pointsize>20</pointsize>
+              <bold>true</bold>
              </font>
             </property>
             <property name="text">
-             <string>Customer Information</string>
+             <string>Customer Info</string>
             </property>
+           </widget>
+           <widget class="QLabel" name="label_18">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>40</y>
+              <width>291</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="font">
+             <font>
+              <family>Poppins</family>
+              <pointsize>10</pointsize>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Welcome to the customer information page</string>
+            </property>
+           </widget>
+           <widget class="QTableWidget" name="studentInfo_table">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>200</y>
+              <width>821</width>
+              <height>511</height>
+             </rect>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QHeaderView::section{
+ font-weight:bold;
+ background-color:black;
+color:white;
+}
+
+QTableWidget{
+ alternate-background-color: #B0EDFB;
+ background-color: #F4F9FA;
+}
+</string>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>true</bool>
+            </property>
+            <column>
+             <property name="text">
+              <string>Name</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>ID</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Gender</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Birthday</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Age</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Address</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Phone</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Email</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Action</string>
+             </property>
+            </column>
+           </widget>
+           <widget class="QWidget" name="">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>90</y>
+              <width>441</width>
+              <height>43</height>
+             </rect>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <widget class="QPushButton" name="addCustomer_btn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>41</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	
+	background-color: rgb(0, 0, 0);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 12px;
+
+}</string>
+               </property>
+               <property name="text">
+                <string>Add</string>
+               </property>
+               <property name="icon">
+                <iconset resource="Accessories/resources.qrc">
+                 <normaloff>:/add student.png</normaloff>:/add student.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="excelExport_btn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>41</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	background-color: #34D481;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 12px;
+
+}</string>
+               </property>
+               <property name="text">
+                <string>Export to Excel</string>
+               </property>
+               <property name="icon">
+                <iconset resource="Accessories/resources.qrc">
+                 <normaloff>:/excel.png</normaloff>:/excel.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pdfExport_btn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>41</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QPushButton{
+	
+	background-color: rgb(255, 78, 78);
+	color: white;
+	border: none;
+	border-radius: 8px;
+	font-weight: bold;
+	font-size: 12px;
+
+}</string>
+               </property>
+               <property name="text">
+                <string>Export to PDF</string>
+               </property>
+               <property name="icon">
+                <iconset resource="Accessories/resources.qrc">
+                 <normaloff>:/pdf.png</normaloff>:/pdf.png</iconset>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>150</y>
+              <width>581</width>
+              <height>43</height>
+             </rect>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QComboBox" name="select_gender">
+               <property name="minimumSize">
+                <size>
+                 <width>150</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Poppins Medium</family>
+                 <pointsize>9</pointsize>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QComboBox{
+	border: 2px solid white;
+	border-radius: 8px;
+	padding: 1px 18px 1px 3px;
+	background-color: black;
+	color: white;
+	height: 35px;
+	padding-left: 15px;
+	font-weight: ;
+	selection-background-color: #2980B9;
+}
+</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>SELECT GENDER</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Male</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Female</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Others</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QComboBox" name="select_class">
+               <property name="minimumSize">
+                <size>
+                 <width>150</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Poppins Medium</family>
+                 <pointsize>9</pointsize>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QComboBox{
+	border: 2px solid white;
+	border-radius: 8px;
+	padding: 1px 18px 1px 3px;
+	background-color: black;
+	color: white;
+	height: 35px;
+	padding-left: 15px;
+	font-weight: ;
+	selection-background-color: #2980B9;
+}
+</string>
+               </property>
+               <item>
+                <property name="text">
+                 <string>SELECT MODEL</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Model 2</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Model 3</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Model 4</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Model 5</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Model 6</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Model 7</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Model 8</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Model 9</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
+                 <string>Model 10</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="search_student">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>31</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLineEdit{
+padding-left:20px;
+border:1px solid gray;
+border-radius:10px;
+}</string>
+               </property>
+               <property name="placeholderText">
+                <string>Search Customer...</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </widget>
           <widget class="QWidget" name="page_4">
