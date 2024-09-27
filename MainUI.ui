@@ -1176,7 +1176,7 @@ QTableWidget{
             </column>
             <column>
              <property name="text">
-              <string>Models</string>
+              <string>Model</string>
              </property>
             </column>
             <column>
