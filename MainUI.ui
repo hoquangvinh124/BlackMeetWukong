@@ -1216,7 +1216,7 @@ QTableWidget{
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_4">
              <item>
-              <widget class="QPushButton" name="addpushButton">
+              <widget class="QPushButton" name="addCustomer_btn">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
