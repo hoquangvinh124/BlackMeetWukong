@@ -51,6 +51,9 @@ class MySideBar(QMainWindow, Ui_MainWindow):
     #Tao bang khach hang
         self.create_customer_table()
 
+    #Mo va them khach hang dialog
+        self.addCustomer_btn.clicked.connect(self.open_addCustomer_dialog)
+
     #Methods to switch to different pages
     def switch_to_dashboard_page(self):
         self.stackedWidget.setCurrentIndex(0)
@@ -184,6 +187,15 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         #Commit
         self.mydb.commit()
         self.mydb.close()
+    #Mo cua so them khach hang
+    def open_addCustomer_dialog(self):
+        from KhachHangDialog import Ui_KhachHangDialog
+        addCustomer_dialog = Ui_KhachHangDialog(self)
+        result = addCustomer_dialog.exec()
+
+        if result == Ui_KhachHangDialog.accepted:
+            pass
+
 
 
 
