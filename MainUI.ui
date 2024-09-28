@@ -1047,7 +1047,7 @@ border-radius:10px;
            </size>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="page">
            <widget class="QLabel" name="label_7">
@@ -1134,7 +1134,7 @@ border-radius:10px;
              <string>Welcome to the customer information page</string>
             </property>
            </widget>
-           <widget class="QTableWidget" name="studentInfo_table">
+           <widget class="QTableWidget" name="customerInfo_table">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -1205,7 +1205,7 @@ QTableWidget{
              </property>
             </column>
            </widget>
-           <widget class="QWidget" name="">
+           <widget class="QWidget" name="layoutWidget">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -1321,7 +1321,7 @@ QTableWidget{
              </item>
             </layout>
            </widget>
-           <widget class="QWidget" name="">
+           <widget class="QWidget" name="layoutWidget">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -1383,7 +1383,7 @@ QTableWidget{
               </widget>
              </item>
              <item>
-              <widget class="QComboBox" name="select_class">
+              <widget class="QComboBox" name="select_model">
                <property name="minimumSize">
                 <size>
                  <width>150</width>
