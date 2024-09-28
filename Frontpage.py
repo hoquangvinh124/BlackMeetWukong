@@ -1,5 +1,6 @@
 from PyQt6.QtWidgets import QMainWindow, QMenu, QTableWidgetItem, QPushButton, QHBoxLayout, QWidget
 from PyQt6.QtGui import QAction, QIcon
+
 from pymysql.constants.FIELD_TYPE import VARCHAR
 
 from MainUI import Ui_MainWindow
@@ -54,10 +55,10 @@ class MySideBar(QMainWindow, Ui_MainWindow):
 
         # Load thong tin vao QTable
         self.load_customers_info()
-        self.select_model.currentIndexChanged.connect(self.load_customers_info())
-        self.select_gender.currentIndexChanged.connect(self.load_customers_info())
+        self.select_model.currentIndexChanged.connect(self.load_customers_info)
+        self.select_gender.currentIndexChanged.connect(self.load_customers_info)
 
-        self.select_gender.currentIndexChanged.connect(self)
+        self.select_gender.currentIndexChanged.connect(self.load_customers_info)
 
         # Control column widths
         self.customerInfo_table.setColumnWidth(0, 120)
@@ -235,7 +236,7 @@ class MySideBar(QMainWindow, Ui_MainWindow):
                 item = QTableWidgetItem(str(cell_data))
                 self.customerInfo_table.setItem(row_index, col_index, item)
 
-                double_button_widget = DoubleButtonWidgetStudents(row_index, row_data)
+                double_button_widget = DoubleButtonWidgetCustomer(row_index, row_data)
 
                 self.customerInfo_table.setCellWidget(row_index, 9, double_button_widget)
                 self.customerInfo_table.setRowHeight(row_index, 50)
@@ -252,8 +253,7 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         data = cursor.fetchall()
         return data
 
-
-class DoubleButtonWidgetStudents(QWidget):
+class DoubleButtonWidgetCustomer(QWidget):
     def __init__(self, row_index, row_data):
         super().__init__()
 
@@ -273,7 +273,7 @@ class DoubleButtonWidgetStudents(QWidget):
         self.delete_button.setStyleSheet("background-color: red;")
         self.edit_button.setFixedSize(61, 31)
 
-        icon = QIcon(":/Icons/edit.png")
+        icon = QIcon(":/profile.png")
         self.edit_button.setIcon(icon)
 
         icon2 = QIcon(":/Icons/delete.png")

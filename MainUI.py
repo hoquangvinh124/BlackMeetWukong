@@ -711,6 +711,7 @@ class Ui_MainWindow(object):
         self.select_model.addItem("")
         self.select_model.addItem("")
         self.select_model.addItem("")
+        self.select_model.addItem("")
         self.horizontalLayout_5.addWidget(self.select_model)
         self.search_student = QtWidgets.QLineEdit(parent=self.layoutWidget2)
         self.search_student.setMinimumSize(QtCore.QSize(0, 31))
@@ -802,7 +803,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
         self.students_2.toggled['bool'].connect(self.students_dropdown.setHidden) # type: ignore
         self.teachers_2.toggled['bool'].connect(self.teachers_dropdown.setHidden) # type: ignore
         self.finances_2.toggled['bool'].connect(self.finances_dropdown.setHidden) # type: ignore
@@ -874,6 +875,7 @@ class Ui_MainWindow(object):
         self.select_model.setItemText(7, _translate("MainWindow", "Model 8"))
         self.select_model.setItemText(8, _translate("MainWindow", "Model 9"))
         self.select_model.setItemText(9, _translate("MainWindow", "Model 10"))
+        self.select_model.setItemText(10, _translate("MainWindow", "Nam"))
         self.search_student.setPlaceholderText(_translate("MainWindow", "Search Customer..."))
         self.label_10.setText(_translate("MainWindow", "Customer Payments"))
         self.label_11.setText(_translate("MainWindow", "Customers Transactions"))
