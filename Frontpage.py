@@ -1,9 +1,10 @@
-from PyQt6.QtWidgets import QMainWindow, QMenu
-from PyQt6.QtGui import QAction
+from PyQt6.QtWidgets import QMainWindow, QMenu, QTableWidgetItem, QPushButton, QHBoxLayout, QWidget
+from PyQt6.QtGui import QAction, QIcon
 from pymysql.constants.FIELD_TYPE import VARCHAR
 
 from MainUI import Ui_MainWindow
 import pymysql
+
 
 class MySideBar(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -11,14 +12,14 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.setWindowTitle('SideBar Menu')
 
-    #Hide Widget Menu
+        # Hide Widget Menu
         self.icon_only_widget.setHidden(True)
 
-    #Hide Dropdowns
+        # Hide Dropdowns
         self.students_dropdown.setHidden(True)
         self.teachers_dropdown.setHidden(True)
         self.finances_dropdown.setHidden(True)
-    #Connect Buttons to switch different pages
+        # Connect Buttons to switch different pages
         self.dashboard_1.clicked.connect(self.switch_to_dashboard_page)
         self.dashboard_2.clicked.connect(self.switch_to_dashboard_page)
 
@@ -40,21 +41,40 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         self.settings_1.clicked.connect(self.switch_to_settings_page)
         self.settings_2.clicked.connect(self.switch_to_settings_page)
 
-    #Connect Buttons to respective context menus
+        # Connect Buttons to respective context menus
         self.students_1.clicked.connect(self.students_context_menu)
         self.teachers_1.clicked.connect(self.teachers_context_menu)
         self.finances_1.clicked.connect(self.finances_context_menu)
 
-    #Connect to db
+        # Connect to db
         self.create_connection()
 
-    #Tao bang khach hang
+        # Tao bang khach hang
         self.create_customer_table()
 
-    #Mo va them khach hang dialog
+        # Load thong tin vao QTable
+        self.load_customers_info()
+        self.select_model.currentIndexChanged.connect(self.load_customers_info())
+        self.select_gender.currentIndexChanged.connect(self.load_customers_info())
+
+        self.select_gender.currentIndexChanged.connect(self)
+
+        # Control column widths
+        self.customerInfo_table.setColumnWidth(0, 120)
+        self.customerInfo_table.setColumnWidth(1, 80)
+        self.customerInfo_table.setColumnWidth(2, 60)
+        self.customerInfo_table.setColumnWidth(3, 70)
+        self.customerInfo_table.setColumnWidth(4, 70)
+        self.customerInfo_table.setColumnWidth(5, 50)
+        self.customerInfo_table.setColumnWidth(6, 70)
+        self.customerInfo_table.setColumnWidth(7, 80)
+        self.customerInfo_table.setColumnWidth(8, 120)
+        self.customerInfo_table.setColumnWidth(9, 150)
+
+        # Mo va them khach hang dialog
         self.addCustomer_btn.clicked.connect(self.open_addCustomer_dialog)
 
-    #Methods to switch to different pages
+    # Methods to switch to different pages
     def switch_to_dashboard_page(self):
         self.stackedWidget.setCurrentIndex(0)
 
@@ -91,46 +111,47 @@ class MySideBar(QMainWindow, Ui_MainWindow):
     def switch_to_settings_page(self):
         self.stackedWidget.setCurrentIndex(11)
 
-    #Methods to show context menus
+    # Methods to show context menus
     def students_context_menu(self):
-        self.show_custom_context_menu(self.students_1, ['Customer Information','Customer Payments','Customer Transactions'])
+        self.show_custom_context_menu(self.students_1,
+                                      ['Customer Information', 'Customer Payments', 'Customer Transactions'])
 
     def teachers_context_menu(self):
-        self.show_custom_context_menu(self.teachers_1,['Staff Information','Staff Salaries','Staff Transactions'])
+        self.show_custom_context_menu(self.teachers_1, ['Staff Information', 'Staff Salaries', 'Staff Transactions'])
 
     def finances_context_menu(self):
-        self.show_custom_context_menu(self.finances_1, ['Budgets','Expenses','Business Overview'])
+        self.show_custom_context_menu(self.finances_1, ['Budgets', 'Expenses', 'Business Overview'])
 
     def show_custom_context_menu(self, button, menu_items):
 
         menu = QMenu(self)
 
-        #Set style for the menu
+        # Set style for the menu
         menu.setStyleSheet('''
                                 QMenu{
                                 background-color: black;
                                 color: white;
                                 }
-                                
+
                                 QMenu:selected{
                                 background-color: white;
                                 color: #12B298;
                                 }
-                            
+
                                 ''')
-        #Add actions to the menu
+        # Add actions to the menu
         for item_text in menu_items:
-            action=QAction(item_text,self)
+            action = QAction(item_text, self)
             action.triggered.connect(self.handle_menu_item_click)
             menu.addAction(action)
 
-        #Show the menu
+        # Show the menu
         menu.move(button.mapToGlobal(button.rect().topRight()))
         menu.exec()
 
     def handle_menu_item_click(self):
 
-        text=self.sender().text()
+        text = self.sender().text()
 
         if text == 'Customer Information':
             self.switch_to_studentInfo_page()
@@ -151,7 +172,6 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         elif text == 'Business Overview':
             self.switch_to_businessOverview_page()
 
-
     def create_connection(self):
         self.mydb = pymysql.connect(
             host='sql12.freemysqlhosting.net',
@@ -160,14 +180,14 @@ class MySideBar(QMainWindow, Ui_MainWindow):
             database='sql12733511',
             port=3306
         )
-        #Tao cursor
+        # Tao cursor
         cursor = self.mydb.cursor()
         return self.mydb
 
-    #TAO BANG KHACH HANG:
+    # TAO BANG KHACH HANG:
 
     def create_customer_table(self):
-        cursor=self.create_connection().cursor
+        cursor = self.create_connection().cursor
 
         create_customer_table_query = f"""
             CREATE TABLE IF NOT EXISTS customer_table(
@@ -181,13 +201,14 @@ class MySideBar(QMainWindow, Ui_MainWindow):
                 phone_number VARCHAR(15),
                 email VARCHAR(15)
         )"""
-        cursor=self.mydb.cursor()
+        cursor = self.mydb.cursor()
         cursor.execute(create_customer_table_query)
 
-        #Commit
+        # Commit
         self.mydb.commit()
         self.mydb.close()
-    #Mo cua so them khach hang
+
+    # Mo cua so them khach hang
     def open_addCustomer_dialog(self):
         from KhachHangDialog import Ui_KhachHangDialog
         addCustomer_dialog = Ui_KhachHangDialog(self)
@@ -195,6 +216,72 @@ class MySideBar(QMainWindow, Ui_MainWindow):
 
         if result == Ui_KhachHangDialog.accepted:
             pass
+
+    # LOAD CUSTOMERS INFORMATION TO QTABLE
+
+    def load_customers_info(self):
+        # Clear existing data in the table
+        self.customerInfo_table.setRowCount(0)
+
+        # fetch data based on the selected class and gender in the combo boxes
+        selected_model = self.select_model.currentText()
+        selected_gender = self.select_gender.currentText()
+        data = self.get_data_from_table(selected_model, selected_gender)
+
+        # Populate the table with the filtered data
+        for row_index, row_data in enumerate(data):
+            self.customerInfo_table.insertRow(row_index)
+            for col_index, cell_data in enumerate(row_data):
+                item = QTableWidgetItem(str(cell_data))
+                self.customerInfo_table.setItem(row_index, col_index, item)
+
+                double_button_widget = DoubleButtonWidgetStudents(row_index, row_data)
+
+                self.customerInfo_table.setCellWidget(row_index, 9, double_button_widget)
+                self.customerInfo_table.setRowHeight(row_index, 50)
+
+    def get_data_from_table(self, nails_filter, gender_filter):
+        cursor = self.create_connection().cursor()
+
+        # Construct the SQL query based on the selected filters
+        query = f"""SELECT names, customer_id, gender, nails, birthday, age, address, phone_number, email FROM customer_table WHERE
+                ('{nails_filter}' = 'SELECT NAILS' OR nails = '{nails_filter}') AND
+                ('{gender_filter}' = 'SELECT GENDER' or gender = '{gender_filter}')"""
+
+        cursor.execute(query)
+        data = cursor.fetchall()
+        return data
+
+
+class DoubleButtonWidgetStudents(QWidget):
+    def __init__(self, row_index, row_data):
+        super().__init__()
+
+        self.row_index = row_index
+        self.row_data = row_data
+
+        self.student_name = self.row_data[0]
+        self.student_id = self.row_data[1]
+
+        layout = QHBoxLayout(self)
+
+        self.edit_button = QPushButton("", self)
+        self.edit_button.setStyleSheet("background-color: blue;")
+        self.edit_button.setFixedSize(61, 31)
+
+        self.delete_button = QPushButton("", self)
+        self.delete_button.setStyleSheet("background-color: red;")
+        self.edit_button.setFixedSize(61, 31)
+
+        icon = QIcon(":/Icons/edit.png")
+        self.edit_button.setIcon(icon)
+
+        icon2 = QIcon(":/Icons/delete.png")
+        self.delete_button.setIcon(icon2)
+
+        layout.addWidget(self.edit_button)
+        layout.addWidget(self.delete_button)
+
 
 
 
