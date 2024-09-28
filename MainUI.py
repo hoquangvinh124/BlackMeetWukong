@@ -12,6 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
+        MainWindow.setEnabled(True)
         MainWindow.resize(1212, 831)
         MainWindow.setMinimumSize(QtCore.QSize(1212, 831))
         MainWindow.setMaximumSize(QtCore.QSize(1212, 831))
@@ -504,6 +505,7 @@ class Ui_MainWindow(object):
         self.main_screen_widget.setStyleSheet("")
         self.main_screen_widget.setObjectName("main_screen_widget")
         self.stackedWidget = QtWidgets.QStackedWidget(parent=self.main_screen_widget)
+        self.stackedWidget.setEnabled(True)
         self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 841, 701))
         self.stackedWidget.setMaximumSize(QtCore.QSize(841, 741))
         self.stackedWidget.setObjectName("stackedWidget")
@@ -610,6 +612,7 @@ class Ui_MainWindow(object):
         self.addCustomer_btn.setObjectName("addCustomer_btn")
         self.horizontalLayout_4.addWidget(self.addCustomer_btn)
         self.excelExport_btn = QtWidgets.QPushButton(parent=self.layoutWidget1)
+        self.excelExport_btn.setEnabled(True)
         self.excelExport_btn.setMinimumSize(QtCore.QSize(0, 41))
         font = QtGui.QFont()
         font.setPointSize(-1)
@@ -803,7 +806,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(8)
         self.students_2.toggled['bool'].connect(self.students_dropdown.setHidden) # type: ignore
         self.teachers_2.toggled['bool'].connect(self.teachers_dropdown.setHidden) # type: ignore
         self.finances_2.toggled['bool'].connect(self.finances_dropdown.setHidden) # type: ignore

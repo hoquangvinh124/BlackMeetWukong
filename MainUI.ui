@@ -30,7 +30,7 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="enabled">
-    <bool>false</bool>
+    <bool>true</bool>
    </property>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
@@ -45,7 +45,7 @@
      <item row="0" column="0">
       <widget class="QWidget" name="icon_only_widget" native="true">
        <property name="enabled">
-        <bool>false</bool>
+        <bool>true</bool>
        </property>
        <property name="minimumSize">
         <size>
@@ -411,7 +411,7 @@ border-radius:3px;
           <item>
            <widget class="QFrame" name="students">
             <property name="enabled">
-             <bool>false</bool>
+             <bool>true</bool>
             </property>
             <property name="frameShape">
              <enum>QFrame::Shape::NoFrame</enum>
@@ -666,7 +666,7 @@ color:#12B298
           <item>
            <widget class="QFrame" name="finances">
             <property name="enabled">
-             <bool>false</bool>
+             <bool>true</bool>
             </property>
             <property name="frameShape">
              <enum>QFrame::Shape::NoFrame</enum>
@@ -887,7 +887,7 @@ QPushButton:checked{
        <item>
         <widget class="QWidget" name="qwww" native="true">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
@@ -1017,7 +1017,7 @@ border-radius:10px;
        <item>
         <widget class="QWidget" name="main_screen_widget" native="true">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
          <property name="minimumSize">
           <size>
@@ -1035,6 +1035,9 @@ border-radius:10px;
           <string notr="true"/>
          </property>
          <widget class="QStackedWidget" name="stackedWidget">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -1050,7 +1053,7 @@ border-radius:10px;
            </size>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>8</number>
           </property>
           <widget class="QWidget" name="page">
            <widget class="QLabel" name="label_7">
@@ -1255,6 +1258,9 @@ QTableWidget{
              </item>
              <item>
               <widget class="QPushButton" name="excelExport_btn">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>0</width>
