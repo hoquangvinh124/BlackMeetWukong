@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -1032,6 +1035,9 @@ border-radius:10px;
           <string notr="true"/>
          </property>
          <widget class="QStackedWidget" name="stackedWidget">
+          <property name="enabled">
+           <bool>true</bool>
+          </property>
           <property name="geometry">
            <rect>
             <x>0</x>
@@ -1047,7 +1053,7 @@ border-radius:10px;
            </size>
           </property>
           <property name="currentIndex">
-           <number>2</number>
+           <number>8</number>
           </property>
           <widget class="QWidget" name="page">
            <widget class="QLabel" name="label_7">
@@ -1257,6 +1263,9 @@ QTableWidget{
              </item>
              <item>
               <widget class="QPushButton" name="excelExport_btn">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
                <property name="minimumSize">
                 <size>
                  <width>0</width>
