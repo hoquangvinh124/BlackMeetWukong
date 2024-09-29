@@ -55,22 +55,20 @@ class MySideBar(QMainWindow, Ui_MainWindow):
 
         # Load thong tin vao QTable
         self.load_customers_info()
-        self.select_model.currentIndexChanged.connect(self.load_customers_info)
-        self.select_gender.currentIndexChanged.connect(self.load_customers_info)
-
-        self.select_gender.currentIndexChanged.connect(self.load_customers_info)
+        self.select_model.currentIndexChanged.connect(self.reload_customertable_info)
+        self.select_gender.currentIndexChanged.connect(self.reload_customertable_info)
 
         # Control column widths
-        self.customerInfo_table.setColumnWidth(0, 120)
-        self.customerInfo_table.setColumnWidth(1, 80)
+        self.customerInfo_table.setColumnWidth(0, 110)
+        self.customerInfo_table.setColumnWidth(1, 70)
         self.customerInfo_table.setColumnWidth(2, 60)
         self.customerInfo_table.setColumnWidth(3, 70)
         self.customerInfo_table.setColumnWidth(4, 70)
         self.customerInfo_table.setColumnWidth(5, 50)
         self.customerInfo_table.setColumnWidth(6, 70)
         self.customerInfo_table.setColumnWidth(7, 80)
-        self.customerInfo_table.setColumnWidth(8, 120)
-        self.customerInfo_table.setColumnWidth(9, 150)
+        self.customerInfo_table.setColumnWidth(8, 80)
+        self.customerInfo_table.setColumnWidth(9, 140)
 
         # Mo va them khach hang dialog
         self.addCustomer_btn.clicked.connect(self.open_addCustomer_dialog)
@@ -216,7 +214,10 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         result = addCustomer_dialog.exec()
 
         if result == Ui_KhachHangDialog.accepted:
-            pass
+            self.reload_customertable_info()
+
+    def reload_customertable_info(self):
+        self.load_customers_info()
 
     # LOAD CUSTOMERS INFORMATION TO QTABLE
 
@@ -241,12 +242,13 @@ class MySideBar(QMainWindow, Ui_MainWindow):
                 self.customerInfo_table.setCellWidget(row_index, 9, double_button_widget)
                 self.customerInfo_table.setRowHeight(row_index, 50)
 
+
     def get_data_from_table(self, nails_filter, gender_filter):
         cursor = self.create_connection().cursor()
 
         # Construct the SQL query based on the selected filters
         query = f"""SELECT names, customer_id, gender, nails, birthday, age, address, phone_number, email FROM customer_table WHERE
-                ('{nails_filter}' = 'SELECT NAILS' OR nails = '{nails_filter}') AND
+                ('{nails_filter}' = 'SELECT MODEL' OR nails = '{nails_filter}') AND
                 ('{gender_filter}' = 'SELECT GENDER' or gender = '{gender_filter}')"""
 
         cursor.execute(query)
@@ -260,8 +262,8 @@ class DoubleButtonWidgetCustomer(QWidget):
         self.row_index = row_index
         self.row_data = row_data
 
-        self.student_name = self.row_data[0]
-        self.student_id = self.row_data[1]
+        self.customer_name = self.row_data[0]
+        self.customer_id = self.row_data[1]
 
         layout = QHBoxLayout(self)
 
@@ -271,12 +273,12 @@ class DoubleButtonWidgetCustomer(QWidget):
 
         self.delete_button = QPushButton("", self)
         self.delete_button.setStyleSheet("background-color: red;")
-        self.edit_button.setFixedSize(61, 31)
+        self.delete_button.setFixedSize(61, 31)
 
-        icon = QIcon(":/profile.png")
+        icon = QIcon(":/edit.png")
         self.edit_button.setIcon(icon)
 
-        icon2 = QIcon(":/Icons/delete.png")
+        icon2 = QIcon(":/delete.png")
         self.delete_button.setIcon(icon2)
 
         layout.addWidget(self.edit_button)

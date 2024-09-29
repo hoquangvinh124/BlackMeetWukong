@@ -1053,7 +1053,7 @@ border-radius:10px;
            </size>
           </property>
           <property name="currentIndex">
-           <number>8</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="page">
            <widget class="QLabel" name="label_7">
@@ -1145,7 +1145,7 @@ border-radius:10px;
              <rect>
               <x>20</x>
               <y>200</y>
-              <width>821</width>
+              <width>831</width>
               <height>511</height>
              </rect>
             </property>
@@ -1432,6 +1432,11 @@ QTableWidget{
                </item>
                <item>
                 <property name="text">
+                 <string>Model 1</string>
+                </property>
+               </item>
+               <item>
+                <property name="text">
                  <string>Model 2</string>
                 </property>
                </item>
@@ -1473,11 +1478,6 @@ QTableWidget{
                <item>
                 <property name="text">
                  <string>Model 10</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>Nam</string>
                 </property>
                </item>
               </widget>
