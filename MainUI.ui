@@ -1176,6 +1176,11 @@ QTableWidget{
             </column>
             <column>
              <property name="text">
+              <string>Model</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
               <string>Birthday</string>
              </property>
             </column>
