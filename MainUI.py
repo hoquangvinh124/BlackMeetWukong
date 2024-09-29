@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\ProjectTotNghiep\MainUI.ui'
+# Form implementation generated from reading ui file 'C:\Users\ACER\PycharmProjects\BlackMeetWukong\MainUI.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.1
 #
@@ -560,6 +560,7 @@ class Ui_MainWindow(object):
 "QTableWidget{\n"
 " alternate-background-color: #B0EDFB;\n"
 " background-color: #F4F9FA;\n"
+"color:black;\n"
 "}\n"
 "")
         self.customerInfo_table.setAlternatingRowColors(True)

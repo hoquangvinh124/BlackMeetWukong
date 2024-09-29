@@ -1159,6 +1159,7 @@ color:white;
 QTableWidget{
  alternate-background-color: #B0EDFB;
  background-color: #F4F9FA;
+color:black;
 }
 </string>
             </property>
