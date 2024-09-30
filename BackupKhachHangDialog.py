@@ -7,7 +7,10 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-from PyQt6.QtWidgets import QDialog
+from PyQt6.QtWidgets import QDialog, QMessageBox
+import pymysql
+from random import randint
+from datetime import datetime
 
 
 class Ui_KhachHangDialog(QDialog):
@@ -257,6 +260,7 @@ class Ui_KhachHangDialog(QDialog):
         self.retranslateUi(self)
         QtCore.QMetaObject.connectSlotsByName(self)
 
+
     def retranslateUi(self, KhachHangDialog):
         _translate = QtCore.QCoreApplication.translate
         KhachHangDialog.setWindowTitle(_translate("Add", "Add"))
@@ -276,3 +280,148 @@ class Ui_KhachHangDialog(QDialog):
         self.label_14.setText(_translate("KhachHangDialog", "Email"))
         self.addpushButton.setText(_translate("KhachHangDialog", "Add"))
         self.cancelpushButton.setText(_translate("KhachHangDialog", "Cancel"))
+
+    #Them khach hang khi nhan nut
+        self.addpushButton.clicked.connect(self.add_customer)
+        self.cancelpushButton.clicked.connect(self.close)
+
+    def create_connection(self):
+        self.mydb = pymysql.connect(
+                host='sql12.freemysqlhosting.net',
+                user='sql12733511',
+                password='fHsPCCsLww',
+                database='sql12733511',
+                port=3306
+                )
+        # Tao cursor
+        cursor = self.mydb.cursor()
+        return self.mydb
+
+    # TAO BANG KHACH HANG:
+
+    def create_customer_table(self):
+        cursor = self.create_connection().cursor
+
+        create_customer_table_query = f"""
+        CREATE TABLE IF NOT EXISTS customer_table(
+                names TEXT,
+                customer_id VARCHAR(15) PRIMARY KEY,
+                gender TEXT,
+                nails TEXT,
+                birthday TEXT,
+                age INT,
+                address TEXT,
+                phone_number VARCHAR(15),
+                email VARCHAR(15)
+        )"""
+        cursor = self.mydb.cursor()
+        cursor.execute(create_customer_table_query)
+
+        # Commit
+        self.mydb.commit()
+        self.mydb.close()
+
+    # THEM KHACH HANG
+    def insert_new_customer(self):
+
+        try:
+            connection = self.create_connection()
+            if connection is None:
+                return
+            cursor = connection.cursor()
+
+            gender = self.gender_comboBox.currentText()
+            customer_id = self.generate_customerId(gender)
+
+            birthday = self.handleDataChange()
+
+            birth_date = self.dob_dateEdit.date()
+            age = self.caculate_age(birth_date)
+
+            #Tao ds khach hang
+            self.new_customer = [
+                self.name_lineEdit.text(),
+                customer_id,
+                self.gender_comboBox.currentText(),
+                self.nm_comboBox.currentText(),
+                birthday,
+                age,
+                self.address_lineEdit.text(),
+                self.phone_lineEdit.text(),
+                self.email_lineEdit.text()
+            ]
+
+            #Them nhieu cot
+            insert_customer_query = f""" INSERT INTO customer_table (names, customer_id, gender, nails, birthday, age, address, phone_number, email) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+
+            cursor.execute(insert_customer_query, self.new_customer)
+            self.show_inserted_message()
+            connection.commit()
+            cursor.close()
+            connection.close()
+
+        except pymysql.connect.Error as err:
+            print(f"Error: {err}")
+
+
+    def generate_customerId(self,gender):
+
+            cursor = self.create_connection().cursor()
+
+            while True:
+                 if gender == "Male":
+                        id_start_value = '24' + '/U/M'
+                 else:
+                        id_start_value = '24' + '/U/F'
+
+                 random_value = self.generate_randomNumber()
+                 customer_id = id_start_value + random_value
+
+                #Kiem tra neu so da ton tai trong bang
+                 cursor.execute(f'SELECT customer_id FROM customer_table WHERE customer_id = %s', (customer_id,))
+                 existing_id = cursor.fetchone()
+
+                 if not existing_id:
+                     return customer_id
+
+
+
+    def generate_randomNumber(self):
+
+            number = randint(1,1000)
+            random_number = f'{number:04d}'
+            return random_number
+
+    def handleDataChange(self):
+        #Chuyen doi ngay theo format
+        selected_date = self.dob_dateEdit.date()
+        self.date_string = selected_date.toString('yyyy-MM-dd')
+
+        return self.date_string
+
+    def caculate_age(self, birth_date):
+        current_date = datetime.now().date()
+        birth_datetime = datetime(birth_date.year(), birth_date.month(), birth_date.day()).date()
+        age = current_date.year - birth_datetime.year
+        if (current_date.month, current_date.day) < (birth_datetime.month, birth_datetime.day):
+            age-=1
+        return age
+
+    def show_inserted_message(self):
+        msg_box = QMessageBox(self)
+        msg_box.setWindowTitle("Add customer")
+        msg_box.setText(self.name_lineEdit.text() + " added into the database")
+        msg_box.exec()
+
+    def add_customer(self):
+        self.insert_new_customer()
+        self.accept()
+
+
+
+
+
+
+
+
+
