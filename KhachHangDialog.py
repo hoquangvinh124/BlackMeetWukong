@@ -84,6 +84,7 @@ class Ui_KhachHangDialog(QDialog):
         font.setBold(False)
         font.setWeight(50)
         self.label_2.setFont(font)
+        self.label_2.setStyleSheet("color: rgb(0, 0, 0);")
         self.label_2.setObjectName("label_2")
         self.verticalLayout.addWidget(self.label_2)
         self.name_lineEdit = QtWidgets.QLineEdit(parent=self.layoutWidget)
@@ -102,6 +103,7 @@ class Ui_KhachHangDialog(QDialog):
         font.setBold(False)
         font.setWeight(50)
         self.label_15.setFont(font)
+        self.label_15.setStyleSheet("color: rgb(0, 0, 0);")
         self.label_15.setObjectName("label_15")
         self.verticalLayout_14.addWidget(self.label_15)
         self.gender_comboBox = QtWidgets.QComboBox(parent=self.layoutWidget)
@@ -125,6 +127,7 @@ class Ui_KhachHangDialog(QDialog):
         font.setBold(False)
         font.setWeight(50)
         self.label_16.setFont(font)
+        self.label_16.setStyleSheet("color: rgb(0, 0, 0);")
         self.label_16.setObjectName("label_16")
         self.verticalLayout_16.addWidget(self.label_16)
         self.nm_comboBox = QtWidgets.QComboBox(parent=self.layoutWidget)
@@ -153,6 +156,7 @@ class Ui_KhachHangDialog(QDialog):
         font.setBold(False)
         font.setWeight(50)
         self.label_17.setFont(font)
+        self.label_17.setStyleSheet("color: rgb(0, 0, 0);")
         self.label_17.setObjectName("label_17")
         self.verticalLayout_15.addWidget(self.label_17)
         self.dob_dateEdit = QtWidgets.QDateEdit(parent=self.layoutWidget)
@@ -174,6 +178,7 @@ class Ui_KhachHangDialog(QDialog):
         font.setBold(False)
         font.setWeight(50)
         self.label_12.setFont(font)
+        self.label_12.setStyleSheet("color: rgb(0, 0, 0);")
         self.label_12.setObjectName("label_12")
         self.verticalLayout_11.addWidget(self.label_12)
         self.address_lineEdit = QtWidgets.QLineEdit(parent=self.layoutWidget)
@@ -190,6 +195,7 @@ class Ui_KhachHangDialog(QDialog):
         font.setBold(False)
         font.setWeight(50)
         self.label_13.setFont(font)
+        self.label_13.setStyleSheet("color: rgb(0, 0, 0);")
         self.label_13.setObjectName("label_13")
         self.verticalLayout_12.addWidget(self.label_13)
         self.phone_lineEdit = QtWidgets.QLineEdit(parent=self.layoutWidget)
@@ -206,6 +212,7 @@ class Ui_KhachHangDialog(QDialog):
         font.setBold(False)
         font.setWeight(50)
         self.label_14.setFont(font)
+        self.label_14.setStyleSheet("color: rgb(0, 0, 0);")
         self.label_14.setObjectName("label_14")
         self.verticalLayout_13.addWidget(self.label_14)
         self.email_lineEdit = QtWidgets.QLineEdit(parent=self.layoutWidget)
@@ -416,12 +423,3 @@ class Ui_KhachHangDialog(QDialog):
     def add_customer(self):
         self.insert_new_customer()
         self.accept()
-
-
-
-
-
-
-
-
-
