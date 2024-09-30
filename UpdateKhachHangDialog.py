@@ -341,7 +341,7 @@ class UpdateKhachHangDialog(QDialog):
             self.mydb.close()
             return records
 
-    def update_data(self):
+    def  update_data(self):
 
             try:
                 connection = self.create_connection()
@@ -374,7 +374,7 @@ class UpdateKhachHangDialog(QDialog):
 
                 print(params)
 
-                update_query=f'UPDATE students_table SET names=%s, customer_id=%s, gender=%s, nails=%s, birthday=%s, age=%s, address=%s, phone_number=%s, email=%s WHERE customer_id=%s'
+                update_query=f'UPDATE students_table SET names=%s, student_id=%s, gender=%s, model=%s, birthday=%s, age=%s, address=%s, phone_number=%s, email=%s WHERE student_id=%s'
 
                 cursor.execute(update_query, params)
                 connection.commit()
