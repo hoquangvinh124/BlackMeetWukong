@@ -14,7 +14,6 @@
    <font>
     <family>Poppins</family>
     <pointsize>20</pointsize>
-    <weight>75</weight>
     <bold>true</bold>
    </font>
   </property>
@@ -64,7 +63,7 @@ QComboBox{
     </rect>
    </property>
    <property name="orientation">
-    <enum>Qt::Horizontal</enum>
+    <enum>Qt::Orientation::Horizontal</enum>
    </property>
   </widget>
   <widget class="QLabel" name="label">
@@ -80,7 +79,6 @@ QComboBox{
     <font>
      <family>Poppins</family>
      <pointsize>18</pointsize>
-     <weight>75</weight>
      <bold>true</bold>
     </font>
    </property>
@@ -111,9 +109,11 @@ QComboBox{
         <property name="font">
          <font>
           <pointsize>11</pointsize>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>Full Name</string>
@@ -147,9 +147,11 @@ QComboBox{
           <property name="font">
            <font>
             <pointsize>11</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);</string>
           </property>
           <property name="text">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Gender&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -162,7 +164,6 @@ QComboBox{
            <font>
             <family>Poppins Medium</family>
             <pointsize>7</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -192,9 +193,11 @@ QComboBox{
           <property name="font">
            <font>
             <pointsize>11</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);</string>
           </property>
           <property name="text">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nail Models&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -207,7 +210,6 @@ QComboBox{
            <font>
             <family>Poppins Medium</family>
             <pointsize>7</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -243,9 +245,11 @@ QComboBox{
           <property name="font">
            <font>
             <pointsize>11</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(0, 0, 0);</string>
           </property>
           <property name="text">
            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Date Of Birth&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -258,7 +262,6 @@ QComboBox{
            <font>
             <family>MS Shell Dlg 2</family>
             <pointsize>7</pointsize>
-            <weight>50</weight>
             <bold>false</bold>
            </font>
           </property>
@@ -275,9 +278,11 @@ QComboBox{
         <property name="font">
          <font>
           <pointsize>11</pointsize>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>Address</string>
@@ -309,9 +314,11 @@ QComboBox{
         <property name="font">
          <font>
           <pointsize>11</pointsize>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>Phone Number</string>
@@ -343,9 +350,11 @@ QComboBox{
         <property name="font">
          <font>
           <pointsize>11</pointsize>
-          <weight>50</weight>
           <bold>false</bold>
          </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(0, 0, 0);</string>
         </property>
         <property name="text">
          <string>Email</string>
@@ -393,7 +402,6 @@ QComboBox{
       <property name="font">
        <font>
         <pointsize>-1</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
@@ -424,7 +432,6 @@ QComboBox{
       <property name="font">
        <font>
         <pointsize>-1</pointsize>
-        <weight>75</weight>
         <bold>true</bold>
        </font>
       </property>
