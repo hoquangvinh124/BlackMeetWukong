@@ -7,12 +7,17 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QDialog
 
 
 class UpdateKhachHangDialog(QDialog):
-    def __init__(self):
+    def __init__(self, row_index, row_data):
         super().__init__()
+
+        #store the row_index and row_data as ínstance variables
+        self.row_index=row_index
+        self.row_data=row_data
 
         self.resize(548, 584)
         self.setStyleSheet(u"QDialog{\n"
@@ -250,7 +255,7 @@ class UpdateKhachHangDialog(QDialog):
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("UpdateKhachHangDialog", "Update Khach Hang Dialog"))
-        
+        self.setWWindowIcon(QIcon(":/Icons/logo.png"))
         self.label.setText(_translate("UpdateKhachHangDialog", "<html><head/><body><p align=\"center\">Update Customer Information</p></body></html>"))
         self.label_2.setText(_translate("UpdateKhachHangDialog", "Full Name"))
         self.label_15.setText(_translate("UpdateKhachHangDialog", "<html><head/><body><p>Gender</p></body></html>"))

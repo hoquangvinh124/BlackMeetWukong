@@ -5,6 +5,7 @@ from pymysql.constants.FIELD_TYPE import VARCHAR
 
 from MainUI import Ui_MainWindow
 import pymysql
+from UpdateKhachHangDialog import UpdateKhachHangDialog
 
 
 class MySideBar(QMainWindow, Ui_MainWindow):
@@ -270,6 +271,7 @@ class DoubleButtonWidgetCustomer(QWidget):
         self.edit_button = QPushButton("", self)
         self.edit_button.setStyleSheet("background-color: blue;")
         self.edit_button.setFixedSize(61, 31)
+        self.edit_button.clicked.connect(self.edit_clicked)
 
         self.delete_button = QPushButton("", self)
         self.delete_button.setStyleSheet("background-color: red;")
@@ -283,6 +285,26 @@ class DoubleButtonWidgetCustomer(QWidget):
 
         layout.addWidget(self.edit_button)
         layout.addWidget(self.delete_button)
+
+        def create_connection(self):
+            self.mydb = pymysql.connect(
+                host='sql12.freemysqlhosting.net',
+                user='sql12733511',
+                password='fHsPCCsLww',
+                database='sql12733511',
+                port=3306
+            )
+            # Tao cursor
+            cursor = self.mydb.cursor()
+            return self.mydb
+    def edit_clicked(self):
+        #Create an instance of UpdateStudent Dialog
+        self.update_dialog=UpdateKhachHangDialog(self.row_index, self.row_data)
+
+        #Execute the dialog
+        self.update_dialog.exec()
+    def delete_clicked(self):
+        pass
 
 
 
