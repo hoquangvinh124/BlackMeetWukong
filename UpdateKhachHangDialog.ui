@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>KhachHangDialog</class>
- <widget class="QDialog" name="KhachHangDialog">
+ <class>UpdateKhachHangDialog</class>
+ <widget class="QDialog" name="UpdateKhachHangDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -121,7 +121,7 @@ QComboBox{
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="name_lineEdit">
+       <widget class="QLineEdit" name="update_name_lineEdit">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -159,7 +159,7 @@ QComboBox{
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="gender_comboBox">
+         <widget class="QComboBox" name="update_gender_comboBox">
           <property name="font">
            <font>
             <family>Poppins Medium</family>
@@ -206,7 +206,7 @@ color: rgb(0, 0, 0);</string>
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="nm_comboBox">
+         <widget class="QComboBox" name="update_nm_comboBox">
           <property name="font">
            <font>
             <family>Poppins Medium</family>
@@ -258,7 +258,7 @@ color: rgb(0, 0, 0);</string>
          </widget>
         </item>
         <item>
-         <widget class="QDateEdit" name="dob_dateEdit">
+         <widget class="QDateEdit" name="update_dob_dateEdit">
           <property name="font">
            <font>
             <family>MS Shell Dlg 2</family>
@@ -291,7 +291,7 @@ color: rgb(0, 0, 0);</string>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="address_lineEdit">
+       <widget class="QLineEdit" name="update_address_lineEdit">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -327,7 +327,7 @@ color: rgb(0, 0, 0);</string>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="phone_lineEdit">
+       <widget class="QLineEdit" name="update_phone_lineEdit">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -363,7 +363,7 @@ color: rgb(0, 0, 0);</string>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="email_lineEdit">
+       <widget class="QLineEdit" name="update_email_lineEdit">
         <property name="minimumSize">
          <size>
           <width>0</width>
@@ -393,7 +393,7 @@ color: rgb(0, 0, 0);</string>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QPushButton" name="addpushButton">
+     <widget class="QPushButton" name="updatepushButton">
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -418,12 +418,12 @@ color: rgb(0, 0, 0);</string>
 }</string>
       </property>
       <property name="text">
-       <string>Add</string>
+       <string>Update</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="cancelpushButton">
+     <widget class="QPushButton" name="updatecancelpushButton">
       <property name="minimumSize">
        <size>
         <width>0</width>
