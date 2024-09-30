@@ -399,7 +399,7 @@ class Ui_KhachHangDialog(QDialog):
 
         return self.date_string
 
-    def calculate_age(self, birth_date):
+    def caculate_age(self, birth_date):
         current_date = datetime.now().date()
         birth_datetime = datetime(birth_date.year(), birth_date.month(), birth_date.day()).date()
         age = current_date.year - birth_datetime.year
