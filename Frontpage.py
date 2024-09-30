@@ -1,5 +1,9 @@
-from PyQt6.QtWidgets import QMainWindow, QMenu, QTableWidgetItem, QPushButton, QHBoxLayout, QWidget
+from PyQt6.QtWidgets import QMainWindow, QMenu, QTableWidgetItem, QPushButton, QHBoxLayout, QWidget, QFileDialog
 from PyQt6.QtGui import QAction, QIcon
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+from reportlab.lib import colors
+import pandas as pd
 
 from pymysql.constants.FIELD_TYPE import VARCHAR
 
@@ -61,15 +65,21 @@ class MySideBar(QMainWindow, Ui_MainWindow):
 
         # Control column widths
         self.customerInfo_table.setColumnWidth(0, 110)
-        self.customerInfo_table.setColumnWidth(1, 70)
+        self.customerInfo_table.setColumnWidth(1, 80)
         self.customerInfo_table.setColumnWidth(2, 60)
         self.customerInfo_table.setColumnWidth(3, 70)
         self.customerInfo_table.setColumnWidth(4, 70)
-        self.customerInfo_table.setColumnWidth(5, 50)
+        self.customerInfo_table.setColumnWidth(5, 40)
         self.customerInfo_table.setColumnWidth(6, 70)
         self.customerInfo_table.setColumnWidth(7, 80)
         self.customerInfo_table.setColumnWidth(8, 80)
         self.customerInfo_table.setColumnWidth(9, 140)
+
+        #Xuat Excel
+        self.excelExport_btn.clicked.connect(self.export_to_excel_customerTable)
+
+        #Xuat PDF
+        self.pdfExport_btn.clicked.connect(self.export_to_pdf_customerTable)
 
         # Mo va them khach hang dialog
         self.addCustomer_btn.clicked.connect(self.open_addCustomer_dialog)
@@ -113,8 +123,7 @@ class MySideBar(QMainWindow, Ui_MainWindow):
 
     # Methods to show context menus
     def students_context_menu(self):
-        self.show_custom_context_menu(self.students_1,
-                                      ['Customer Information', 'Customer Payments', 'Customer Transactions'])
+        self.show_custom_context_menu(self.students_1,['Customer Information', 'Customer Payments', 'Customer Transactions'])
 
     def teachers_context_menu(self):
         self.show_custom_context_menu(self.teachers_1, ['Staff Information', 'Staff Salaries', 'Staff Transactions'])
@@ -199,7 +208,7 @@ class MySideBar(QMainWindow, Ui_MainWindow):
                 age INT,
                 address TEXT,
                 phone_number VARCHAR(15),
-                email VARCHAR(15)
+                email TEXT
         )"""
         cursor = self.mydb.cursor()
         cursor.execute(create_customer_table_query)
@@ -243,6 +252,78 @@ class MySideBar(QMainWindow, Ui_MainWindow):
                 self.customerInfo_table.setCellWidget(row_index, 9, double_button_widget)
                 self.customerInfo_table.setRowHeight(row_index, 50)
 
+    #Xuat Excel
+    def export_to_excel_customerTable(self):
+        # Convert QTableWidget to pandas DataFrame
+        data = []
+
+        self.headers = [self.customerInfo_table.horizontalHeaderItem(col).text() for col in
+                        range(self.customerInfo_table.columnCount())]
+
+        for row in range(self.customerInfo_table.rowCount()):
+            # Check if the item is not None before accessing its text
+            row_data = [self.customerInfo_table.item(row, col).text() if self.customerInfo_table.item(row,col) is not None else "" for col in range(self.customerInfo_table.columnCount())]
+            data.append(row_data)
+
+        # Create a pandas DataFrame with the collected data and the headers
+        df = pd.DataFrame(data, columns=self.headers)
+
+        # Save DataFrame to Excel file
+        # Exclude the last column before exporting
+        df_filtered = df.iloc[:, :-1]
+
+        # Open QFileDialog to get the file path
+        file_dialog = QFileDialog()
+        file_path, _ = file_dialog.getSaveFileName(self, "Save Excel File", "", "Excel Files (*.xlsx);;All Files (*)")
+
+        if file_path:
+            # Save filtered DataFrame to Excel file at the chosen path
+            df_filtered.to_excel(file_path, index=False)
+            print(f"Table exported to {file_path}")
+
+    #Xuat PDF
+    def export_to_pdf_customerTable(self):
+        # Open QFileDialog to get the file path
+        file_dialog = QFileDialog()
+        file_path, _ = file_dialog.getSaveFileName(self, "Save PDF File", "", "PDF Files (*.pdf);;All Files (*)")
+
+        if file_path:
+            # Create a PDF Document
+            pdf_document = SimpleDocTemplate(file_path, pagesize=letter)
+
+            # Assuming n is the total number of columns in your QTable Widget
+            n = self.customerInfo_table.columnCount()
+
+            # Extract headers from the QTableWidget
+            headers = [self.customerInfo_table.horizontalHeaderItem(col).text() for col in range(n-1)]
+
+            # Extract data from the QTableWidget, excluding the last column
+            data = [headers]
+
+            for row in range(self.customerInfo_table.rowCount()):
+                row_data = [
+                    self.customerInfo_table.item(row, col).text() if self.customerInfo_table.item(row,col) is not None else "" for col in range(n-1)
+                ]
+                data.append(row_data)
+
+            # Create a PDF Table
+            pdf_table = Table(data)
+
+            # Apply styles to the table
+            style = TableStyle([
+                ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                ('FONTSIZE', (0, 0), (-1, 0), 9),
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                ('GRID', (0, 0), (-1, -1), 1, colors.black)
+            ])
+
+            pdf_table.setStyle(style)
+
+            # Build the PDF document
+            pdf_document.build([pdf_table])
+
+            print(f"Table exported to {file_path}")
 
     def get_data_from_table(self, nails_filter, gender_filter):
         cursor = self.create_connection().cursor()

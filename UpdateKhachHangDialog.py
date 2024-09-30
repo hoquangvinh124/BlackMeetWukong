@@ -13,6 +13,7 @@ from random import randint
 from datetime import datetime
 
 
+
 class UpdateKhachHangDialog(QDialog):
     def __init__(self, row_index, row_data):
         super().__init__()
