@@ -269,7 +269,7 @@ class UpdateKhachHangDialog(QDialog):
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
         self.setWindowTitle(_translate("UpdateKhachHangDialog", "Update Khach Hang Dialog"))
-        self.setWindowIcon(QIcon(":/Icons/logo.png"))
+        self.setWWindowIcon(QIcon(":/Icons/logo.png"))
         self.label.setText(_translate("UpdateKhachHangDialog", "<html><head/><body><p align=\"center\">Update Customer Information</p></body></html>"))
         self.label_2.setText(_translate("UpdateKhachHangDialog", "Full Name"))
         self.label_15.setText(_translate("UpdateKhachHangDialog", "<html><head/><body><p>Gender</p></body></html>"))
