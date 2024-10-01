@@ -288,29 +288,30 @@ class DoubleButtonWidgetCustomer(QWidget):
         layout.addWidget(self.edit_button)
         layout.addWidget(self.delete_button)
 
-        def create_connection(self):
-            self.mydb = pymysql.connect(
-                host='sql12.freemysqlhosting.net',
-                user='sql12733511',
-                password='fHsPCCsLww',
-                database='sql12733511',
-                port=3306
+    def create_connection(self):
+        self.mydb = pymysql.connect(
+            host='sql12.freemysqlhosting.net',
+            user='sql12733511',
+            password='fHsPCCsLww',
+            database='sql12733511',
+            port=3306
             )
-            # Tao cursor
-            cursor = self.mydb.cursor()
-            return self.mydb
+        # Tao cursor
+        cursor = self.mydb.cursor()
+        return self.mydb
+
     def edit_clicked(self):
         #Create an instance of UpdateStudent Dialog
         self.update_dialog=UpdateKhachHangDialog(self.row_index, self.row_data)
 
         #connect signal to reload
-        self.update_dialog.data_updated.connect(self.sideBar.reload_customertable_data)
+        self.update_dialog.data_updated.connect(self.sideBar.reload_customertable_info)
 
         #Execute the dialog
         self.update_dialog.exec()
-    def delete_clicked(self):
 
-        cursor = self.create_connection().cursor()
+    def delete_clicked(self):
+        cursor = self.create_connection().cursor
 
         #Create a confirmation dialog
         message=QMessageBox.question(
@@ -321,15 +322,12 @@ class DoubleButtonWidgetCustomer(QWidget):
 
         if message==QMessageBox.StandardButton.Yes:
             delete_query='DELETE FROM customer_table WHERE customer_id=%s'
+            cursor = self.mydb.cursor()
             cursor.execute(delete_query,(self.customer_id))
             self.mydb.commit()
             self.mydb.close()
 
-            self.sideBar.reload_customertable_data()
-
-
-
-
+            self.sideBar.reload_customertable_info()
 
 
 
