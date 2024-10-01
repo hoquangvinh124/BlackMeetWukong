@@ -1,9 +1,5 @@
-from PyQt6.QtWidgets import QMainWindow, QMenu, QTableWidgetItem, QPushButton, QHBoxLayout, QWidget, QFileDialog
+from PyQt6.QtWidgets import QMainWindow, QMenu, QTableWidgetItem, QPushButton, QHBoxLayout, QWidget, QMessageBox
 from PyQt6.QtGui import QAction, QIcon
-from reportlab.lib.pagesizes import letter
-from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
-from reportlab.lib import colors
-import pandas as pd
 
 from pymysql.constants.FIELD_TYPE import VARCHAR
 
@@ -65,21 +61,15 @@ class MySideBar(QMainWindow, Ui_MainWindow):
 
         # Control column widths
         self.customerInfo_table.setColumnWidth(0, 110)
-        self.customerInfo_table.setColumnWidth(1, 80)
+        self.customerInfo_table.setColumnWidth(1, 70)
         self.customerInfo_table.setColumnWidth(2, 60)
         self.customerInfo_table.setColumnWidth(3, 70)
         self.customerInfo_table.setColumnWidth(4, 70)
-        self.customerInfo_table.setColumnWidth(5, 40)
+        self.customerInfo_table.setColumnWidth(5, 50)
         self.customerInfo_table.setColumnWidth(6, 70)
         self.customerInfo_table.setColumnWidth(7, 80)
         self.customerInfo_table.setColumnWidth(8, 80)
         self.customerInfo_table.setColumnWidth(9, 140)
-
-        #Xuat Excel
-        self.excelExport_btn.clicked.connect(self.export_to_excel_customerTable)
-
-        #Xuat PDF
-        self.pdfExport_btn.clicked.connect(self.export_to_pdf_customerTable)
 
         # Mo va them khach hang dialog
         self.addCustomer_btn.clicked.connect(self.open_addCustomer_dialog)
@@ -123,7 +113,8 @@ class MySideBar(QMainWindow, Ui_MainWindow):
 
     # Methods to show context menus
     def students_context_menu(self):
-        self.show_custom_context_menu(self.students_1,['Customer Information', 'Customer Payments', 'Customer Transactions'])
+        self.show_custom_context_menu(self.students_1,
+                                      ['Customer Information', 'Customer Payments', 'Customer Transactions'])
 
     def teachers_context_menu(self):
         self.show_custom_context_menu(self.teachers_1, ['Staff Information', 'Staff Salaries', 'Staff Transactions'])
@@ -208,7 +199,7 @@ class MySideBar(QMainWindow, Ui_MainWindow):
                 age INT,
                 address TEXT,
                 phone_number VARCHAR(15),
-                email TEXT
+                email VARCHAR(15)
         )"""
         cursor = self.mydb.cursor()
         cursor.execute(create_customer_table_query)
@@ -223,8 +214,8 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         addCustomer_dialog = Ui_KhachHangDialog(self)
         result = addCustomer_dialog.exec()
 
-        if result == addCustomer_dialog.accepted:  # Kiểm tra nếu dialog được chấp nhận
-            self.reload_customertable_info()  # Gọi lại phương thức load lại bảng
+        if result == Ui_KhachHangDialog.accepted:
+            self.reload_customertable_info()
 
     def reload_customertable_info(self):
         self.load_customers_info()
@@ -247,83 +238,11 @@ class MySideBar(QMainWindow, Ui_MainWindow):
                 item = QTableWidgetItem(str(cell_data))
                 self.customerInfo_table.setItem(row_index, col_index, item)
 
-                double_button_widget = DoubleButtonWidgetCustomer(row_index, row_data)
+                double_button_widget = DoubleButtonWidgetCustomer(row_index, row_data, self)
 
                 self.customerInfo_table.setCellWidget(row_index, 9, double_button_widget)
                 self.customerInfo_table.setRowHeight(row_index, 50)
 
-    #Xuat Excel
-    def export_to_excel_customerTable(self):
-        # Convert QTableWidget to pandas DataFrame
-        data = []
-
-        self.headers = [self.customerInfo_table.horizontalHeaderItem(col).text() for col in
-                        range(self.customerInfo_table.columnCount())]
-
-        for row in range(self.customerInfo_table.rowCount()):
-            # Check if the item is not None before accessing its text
-            row_data = [self.customerInfo_table.item(row, col).text() if self.customerInfo_table.item(row,col) is not None else "" for col in range(self.customerInfo_table.columnCount())]
-            data.append(row_data)
-
-        # Create a pandas DataFrame with the collected data and the headers
-        df = pd.DataFrame(data, columns=self.headers)
-
-        # Save DataFrame to Excel file
-        # Exclude the last column before exporting
-        df_filtered = df.iloc[:, :-1]
-
-        # Open QFileDialog to get the file path
-        file_dialog = QFileDialog()
-        file_path, _ = file_dialog.getSaveFileName(self, "Save Excel File", "", "Excel Files (*.xlsx);;All Files (*)")
-
-        if file_path:
-            # Save filtered DataFrame to Excel file at the chosen path
-            df_filtered.to_excel(file_path, index=False)
-            print(f"Table exported to {file_path}")
-
-    #Xuat PDF
-    def export_to_pdf_customerTable(self):
-        # Open QFileDialog to get the file path
-        file_dialog = QFileDialog()
-        file_path, _ = file_dialog.getSaveFileName(self, "Save PDF File", "", "PDF Files (*.pdf);;All Files (*)")
-
-        if file_path:
-            # Create a PDF Document
-            pdf_document = SimpleDocTemplate(file_path, pagesize=letter)
-
-            # Assuming n is the total number of columns in your QTable Widget
-            n = self.customerInfo_table.columnCount()
-
-            # Extract headers from the QTableWidget
-            headers = [self.customerInfo_table.horizontalHeaderItem(col).text() for col in range(n-1)]
-
-            # Extract data from the QTableWidget, excluding the last column
-            data = [headers]
-
-            for row in range(self.customerInfo_table.rowCount()):
-                row_data = [
-                    self.customerInfo_table.item(row, col).text() if self.customerInfo_table.item(row,col) is not None else "" for col in range(n-1)
-                ]
-                data.append(row_data)
-
-            # Create a PDF Table
-            pdf_table = Table(data)
-
-            # Apply styles to the table
-            style = TableStyle([
-                ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
-                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                ('FONTSIZE', (0, 0), (-1, 0), 9),
-                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                ('GRID', (0, 0), (-1, -1), 1, colors.black)
-            ])
-
-            pdf_table.setStyle(style)
-
-            # Build the PDF document
-            pdf_document.build([pdf_table])
-
-            print(f"Table exported to {file_path}")
 
     def get_data_from_table(self, nails_filter, gender_filter):
         cursor = self.create_connection().cursor()
@@ -338,11 +257,12 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         return data
 
 class DoubleButtonWidgetCustomer(QWidget):
-    def __init__(self, row_index, row_data):
+    def __init__(self, row_index, row_data, sideBar):
         super().__init__()
 
         self.row_index = row_index
         self.row_data = row_data
+        self.sideBar = sideBar
 
         self.customer_name = self.row_data[0]
         self.customer_id = self.row_data[1]
@@ -357,6 +277,7 @@ class DoubleButtonWidgetCustomer(QWidget):
         self.delete_button = QPushButton("", self)
         self.delete_button.setStyleSheet("background-color: red;")
         self.delete_button.setFixedSize(61, 31)
+        self.delete_button.clicked.connect(self.delete_clicked)
 
         icon = QIcon(":/edit.png")
         self.edit_button.setIcon(icon)
@@ -367,28 +288,46 @@ class DoubleButtonWidgetCustomer(QWidget):
         layout.addWidget(self.edit_button)
         layout.addWidget(self.delete_button)
 
-        def create_connection(self):
-            self.mydb = pymysql.connect(
-                host='sql12.freemysqlhosting.net',
-                user='sql12733511',
-                password='fHsPCCsLww',
-                database='sql12733511',
-                port=3306
+    def create_connection(self):
+        self.mydb = pymysql.connect(
+            host='sql12.freemysqlhosting.net',
+            user='sql12733511',
+            password='fHsPCCsLww',
+            database='sql12733511',
+            port=3306
             )
-            # Tao cursor
-            cursor = self.mydb.cursor()
-            return self.mydb
+        # Tao cursor
+        cursor = self.mydb.cursor()
+        return self.mydb
+
     def edit_clicked(self):
         #Create an instance of UpdateStudent Dialog
         self.update_dialog=UpdateKhachHangDialog(self.row_index, self.row_data)
 
+        #connect signal to reload
+        self.update_dialog.data_updated.connect(self.sideBar.reload_customertable_info)
+
         #Execute the dialog
         self.update_dialog.exec()
+
     def delete_clicked(self):
-        pass
+        cursor = self.create_connection().cursor
 
+        #Create a confirmation dialog
+        message=QMessageBox.question(
+            self,'Confirmation',
+            'Are you sure you want to delete'+ self.customer_name + '?',
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
 
+        if message==QMessageBox.StandardButton.Yes:
+            delete_query='DELETE FROM customer_table WHERE customer_id=%s'
+            cursor = self.mydb.cursor()
+            cursor.execute(delete_query,(self.customer_id))
+            self.mydb.commit()
+            self.mydb.close()
 
+            self.sideBar.reload_customertable_info()
 
 
 
