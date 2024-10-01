@@ -12,8 +12,13 @@ from PyQt6.QtWidgets import QDialog, QMessageBox
 from random import randint
 from datetime import datetime
 
+from PySide6.QtCore import Signal
+
 
 class UpdateKhachHangDialog(QDialog):
+
+    data_updated=Signal()
+
     def __init__(self, row_index, row_data):
         super().__init__()
 
@@ -382,6 +387,9 @@ class UpdateKhachHangDialog(QDialog):
                 connection.close()
                 self.close()
 
+                #emit signal
+                self.data_updated.emit()
+
             except pymysql.connect.Error as err:
                     print(f'Error: {err}')
 
@@ -441,5 +449,6 @@ class UpdateKhachHangDialog(QDialog):
     def show_updated_message(self):
             msg_box = QMessageBox(self)
             msg_box.setWindowTitle("Success")
-            msg_box.setText(self.customer_name_info + " information updated successfully")
+            msg_box.setText(self.customer_name_info + ' information updated successfully')
+            msg_box.setStyleSheet("color: rgb(0, 0, 0);")
             msg_box.exec()

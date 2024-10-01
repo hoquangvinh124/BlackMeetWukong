@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QMainWindow, QMenu, QTableWidgetItem, QPushButton, QHBoxLayout, QWidget
+from PyQt6.QtWidgets import QMainWindow, QMenu, QTableWidgetItem, QPushButton, QHBoxLayout, QWidget, QMessageBox
 from PyQt6.QtGui import QAction, QIcon
 
 from pymysql.constants.FIELD_TYPE import VARCHAR
@@ -238,7 +238,7 @@ class MySideBar(QMainWindow, Ui_MainWindow):
                 item = QTableWidgetItem(str(cell_data))
                 self.customerInfo_table.setItem(row_index, col_index, item)
 
-                double_button_widget = DoubleButtonWidgetCustomer(row_index, row_data)
+                double_button_widget = DoubleButtonWidgetCustomer(row_index, row_data, self)
 
                 self.customerInfo_table.setCellWidget(row_index, 9, double_button_widget)
                 self.customerInfo_table.setRowHeight(row_index, 50)
@@ -257,11 +257,12 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         return data
 
 class DoubleButtonWidgetCustomer(QWidget):
-    def __init__(self, row_index, row_data):
+    def __init__(self, row_index, row_data, sideBar):
         super().__init__()
 
         self.row_index = row_index
         self.row_data = row_data
+        self.sideBar = sideBar
 
         self.customer_name = self.row_data[0]
         self.customer_id = self.row_data[1]
@@ -276,6 +277,7 @@ class DoubleButtonWidgetCustomer(QWidget):
         self.delete_button = QPushButton("", self)
         self.delete_button.setStyleSheet("background-color: red;")
         self.delete_button.setFixedSize(61, 31)
+        self.delete_button.clicked.connect(self.delete_clicked)
 
         icon = QIcon(":/edit.png")
         self.edit_button.setIcon(icon)
@@ -301,10 +303,30 @@ class DoubleButtonWidgetCustomer(QWidget):
         #Create an instance of UpdateStudent Dialog
         self.update_dialog=UpdateKhachHangDialog(self.row_index, self.row_data)
 
+        #connect signal to reload
+        self.update_dialog.data_updated.connect(self.sideBar.reload_customertable_data)
+
         #Execute the dialog
         self.update_dialog.exec()
     def delete_clicked(self):
-        pass
+
+        cursor = self.create_connection().cursor()
+
+        #Create a confirmation dialog
+        message=QMessageBox.question(
+            self,'Confirmation',
+            'Are you sure you want to delete'+ self.customer_name + '?',
+            QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
+        )
+
+        if message==QMessageBox.StandardButton.Yes:
+            delete_query='DELETE FROM customer_table WHERE customer_id=%s'
+            cursor.execute(delete_query,(self.customer_id))
+            self.mydb.commit()
+            self.mydb.close()
+
+            self.sideBar.reload_customertable_data()
+
 
 
 
