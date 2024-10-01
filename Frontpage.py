@@ -399,7 +399,7 @@ class DoubleButtonWidgetCustomer(QWidget):
         #Create a confirmation dialog
         message=QMessageBox.question(
             self,'Confirmation',
-            'Are you sure you want to delete'+ self.customer_name + '?',
+            'Are you sure you want to delete '+ self.customer_name + '?',
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
         )
 

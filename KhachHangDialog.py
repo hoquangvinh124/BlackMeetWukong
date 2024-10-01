@@ -417,6 +417,7 @@ class Ui_KhachHangDialog(QDialog):
     def show_inserted_message(self):
         msg_box = QMessageBox(self)
         msg_box.setWindowTitle("Add customer")
+        msg_box.setStyleSheet("color: rgb(0, 0, 0);")
         msg_box.setText(self.name_lineEdit.text() + " added into the database")
         msg_box.exec()
 
