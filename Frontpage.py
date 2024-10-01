@@ -223,8 +223,8 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         addCustomer_dialog = Ui_KhachHangDialog(self)
         result = addCustomer_dialog.exec()
 
-        if result == Ui_KhachHangDialog.accepted:
-            self.reload_customertable_info()
+        if result == addCustomer_dialog.accepted:  # Kiểm tra nếu dialog được chấp nhận
+            self.reload_customertable_info()  # Gọi lại phương thức load lại bảng
 
     def reload_customertable_info(self):
         self.load_customers_info()
