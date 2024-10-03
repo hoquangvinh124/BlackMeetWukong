@@ -223,9 +223,7 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         from KhachHangDialog import Ui_KhachHangDialog
         addCustomer_dialog = Ui_KhachHangDialog(self)
         result = addCustomer_dialog.exec()
-
-        if result == Ui_KhachHangDialog.accepted:
-            self.reload_customertable_info()
+        self.reload_customertable_info()
 
     def reload_customertable_info(self):
         self.load_customers_info()

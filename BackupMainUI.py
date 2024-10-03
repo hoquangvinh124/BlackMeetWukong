@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'D:\ProjectTotNghiep\MainUI.ui'
+# Form implementation generated from reading ui file 'C:\Users\ACER\PycharmProjects\BlackMeetWukong\MainUI.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.1
 #
@@ -12,14 +12,20 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1212, 831)
-        MainWindow.setMinimumSize(QtCore.QSize(1212, 831))
-        MainWindow.setMaximumSize(QtCore.QSize(1212, 831))
+        MainWindow.setEnabled(True)
+        MainWindow.resize(1170, 799)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(MainWindow.sizePolicy().hasHeightForWidth())
+        MainWindow.setSizePolicy(sizePolicy)
+        MainWindow.setMinimumSize(QtCore.QSize(1170, 799))
+        MainWindow.setMaximumSize(QtCore.QSize(1170, 799))
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setEnabled(True)
         self.centralwidget.setObjectName("centralwidget")
         self.layoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
-        self.layoutWidget.setGeometry(QtCore.QRect(0, 0, 1211, 818))
+        self.layoutWidget.setGeometry(QtCore.QRect(0, -10, 1161, 818))
         self.layoutWidget.setObjectName("layoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.layoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
@@ -504,15 +510,19 @@ class Ui_MainWindow(object):
         self.main_screen_widget.setStyleSheet("")
         self.main_screen_widget.setObjectName("main_screen_widget")
         self.stackedWidget = QtWidgets.QStackedWidget(parent=self.main_screen_widget)
-        self.stackedWidget.setGeometry(QtCore.QRect(9, 10, 232, 188))
+        self.stackedWidget.setEnabled(True)
+        self.stackedWidget.setGeometry(QtCore.QRect(0, 0, 841, 701))
         self.stackedWidget.setMaximumSize(QtCore.QSize(841, 741))
         self.stackedWidget.setObjectName("stackedWidget")
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
         self.label_7 = QtWidgets.QLabel(parent=self.page)
-        self.label_7.setGeometry(QtCore.QRect(330, 210, 161, 141))
+        self.label_7.setGeometry(QtCore.QRect(320, 240, 221, 141))
         font = QtGui.QFont()
+        font.setFamily("Poppins")
         font.setPointSize(25)
+        font.setBold(True)
+        font.setItalic(True)
         self.label_7.setFont(font)
         self.label_7.setObjectName("label_7")
         self.stackedWidget.addWidget(self.page)
@@ -528,11 +538,201 @@ class Ui_MainWindow(object):
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
         self.label_9 = QtWidgets.QLabel(parent=self.page_3)
-        self.label_9.setGeometry(QtCore.QRect(250, 210, 331, 141))
+        self.label_9.setGeometry(QtCore.QRect(20, 0, 221, 51))
         font = QtGui.QFont()
-        font.setPointSize(25)
+        font.setFamily("Poppins")
+        font.setPointSize(20)
+        font.setBold(True)
         self.label_9.setFont(font)
         self.label_9.setObjectName("label_9")
+        self.label_18 = QtWidgets.QLabel(parent=self.page_3)
+        self.label_18.setGeometry(QtCore.QRect(20, 40, 291, 31))
+        font = QtGui.QFont()
+        font.setFamily("Poppins")
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setItalic(False)
+        self.label_18.setFont(font)
+        self.label_18.setObjectName("label_18")
+        self.customerInfo_table = QtWidgets.QTableWidget(parent=self.page_3)
+        self.customerInfo_table.setGeometry(QtCore.QRect(20, 200, 831, 511))
+        self.customerInfo_table.setStyleSheet("QHeaderView::section{\n"
+" font-weight:bold;\n"
+" background-color:black;\n"
+"color:white;\n"
+"}\n"
+"\n"
+"QTableWidget{\n"
+" alternate-background-color: #B0EDFB;\n"
+" background-color: #F4F9FA;\n"
+"color:black;\n"
+"}\n"
+"")
+        self.customerInfo_table.setAlternatingRowColors(True)
+        self.customerInfo_table.setObjectName("customerInfo_table")
+        self.customerInfo_table.setColumnCount(10)
+        self.customerInfo_table.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.customerInfo_table.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.customerInfo_table.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.customerInfo_table.setHorizontalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.customerInfo_table.setHorizontalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.customerInfo_table.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.customerInfo_table.setHorizontalHeaderItem(5, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.customerInfo_table.setHorizontalHeaderItem(6, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.customerInfo_table.setHorizontalHeaderItem(7, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.customerInfo_table.setHorizontalHeaderItem(8, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.customerInfo_table.setHorizontalHeaderItem(9, item)
+        self.layoutWidget1 = QtWidgets.QWidget(parent=self.page_3)
+        self.layoutWidget1.setGeometry(QtCore.QRect(20, 90, 441, 43))
+        self.layoutWidget1.setObjectName("layoutWidget1")
+        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.layoutWidget1)
+        self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
+        self.addCustomer_btn = QtWidgets.QPushButton(parent=self.layoutWidget1)
+        self.addCustomer_btn.setMinimumSize(QtCore.QSize(0, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        self.addCustomer_btn.setFont(font)
+        self.addCustomer_btn.setStyleSheet("QPushButton{\n"
+"    \n"
+"    background-color: rgb(0, 0, 0);\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 8px;\n"
+"    font-weight: bold;\n"
+"    font-size: 12px;\n"
+"\n"
+"}")
+        icon15 = QtGui.QIcon()
+        icon15.addPixmap(QtGui.QPixmap(":/add student.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.addCustomer_btn.setIcon(icon15)
+        self.addCustomer_btn.setObjectName("addCustomer_btn")
+        self.horizontalLayout_4.addWidget(self.addCustomer_btn)
+        self.excelExport_btn = QtWidgets.QPushButton(parent=self.layoutWidget1)
+        self.excelExport_btn.setEnabled(True)
+        self.excelExport_btn.setMinimumSize(QtCore.QSize(0, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        self.excelExport_btn.setFont(font)
+        self.excelExport_btn.setStyleSheet("QPushButton{\n"
+"    background-color: #34D481;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 8px;\n"
+"    font-weight: bold;\n"
+"    font-size: 12px;\n"
+"\n"
+"}")
+        icon16 = QtGui.QIcon()
+        icon16.addPixmap(QtGui.QPixmap(":/excel.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.excelExport_btn.setIcon(icon16)
+        self.excelExport_btn.setObjectName("excelExport_btn")
+        self.horizontalLayout_4.addWidget(self.excelExport_btn)
+        self.pdfExport_btn = QtWidgets.QPushButton(parent=self.layoutWidget1)
+        self.pdfExport_btn.setMinimumSize(QtCore.QSize(0, 41))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        font.setBold(True)
+        self.pdfExport_btn.setFont(font)
+        self.pdfExport_btn.setStyleSheet("QPushButton{\n"
+"    \n"
+"    background-color: rgb(255, 78, 78);\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 8px;\n"
+"    font-weight: bold;\n"
+"    font-size: 12px;\n"
+"\n"
+"}")
+        icon17 = QtGui.QIcon()
+        icon17.addPixmap(QtGui.QPixmap(":/pdf.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.pdfExport_btn.setIcon(icon17)
+        self.pdfExport_btn.setObjectName("pdfExport_btn")
+        self.horizontalLayout_4.addWidget(self.pdfExport_btn)
+        self.layoutWidget2 = QtWidgets.QWidget(parent=self.page_3)
+        self.layoutWidget2.setGeometry(QtCore.QRect(20, 150, 581, 43))
+        self.layoutWidget2.setObjectName("layoutWidget2")
+        self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.layoutWidget2)
+        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_5.setObjectName("horizontalLayout_5")
+        self.select_gender = QtWidgets.QComboBox(parent=self.layoutWidget2)
+        self.select_gender.setMinimumSize(QtCore.QSize(150, 0))
+        font = QtGui.QFont()
+        font.setFamily("Poppins Medium")
+        font.setPointSize(9)
+        font.setBold(False)
+        self.select_gender.setFont(font)
+        self.select_gender.setStyleSheet("QComboBox{\n"
+"    border: 2px solid white;\n"
+"    border-radius: 8px;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"    background-color: black;\n"
+"    color: white;\n"
+"    height: 35px;\n"
+"    padding-left: 15px;\n"
+"    font-weight: ;\n"
+"    selection-background-color: #2980B9;\n"
+"}\n"
+"")
+        self.select_gender.setObjectName("select_gender")
+        self.select_gender.addItem("")
+        self.select_gender.addItem("")
+        self.select_gender.addItem("")
+        self.select_gender.addItem("")
+        self.horizontalLayout_5.addWidget(self.select_gender)
+        self.select_model = QtWidgets.QComboBox(parent=self.layoutWidget2)
+        self.select_model.setMinimumSize(QtCore.QSize(150, 0))
+        font = QtGui.QFont()
+        font.setFamily("Poppins Medium")
+        font.setPointSize(9)
+        font.setBold(False)
+        self.select_model.setFont(font)
+        self.select_model.setStyleSheet("QComboBox{\n"
+"    border: 2px solid white;\n"
+"    border-radius: 8px;\n"
+"    padding: 1px 18px 1px 3px;\n"
+"    background-color: black;\n"
+"    color: white;\n"
+"    height: 35px;\n"
+"    padding-left: 15px;\n"
+"    font-weight: ;\n"
+"    selection-background-color: #2980B9;\n"
+"}\n"
+"")
+        self.select_model.setObjectName("select_model")
+        self.select_model.addItem("")
+        self.select_model.addItem("")
+        self.select_model.addItem("")
+        self.select_model.addItem("")
+        self.select_model.addItem("")
+        self.select_model.addItem("")
+        self.select_model.addItem("")
+        self.select_model.addItem("")
+        self.select_model.addItem("")
+        self.select_model.addItem("")
+        self.select_model.addItem("")
+        self.horizontalLayout_5.addWidget(self.select_model)
+        self.search_student = QtWidgets.QLineEdit(parent=self.layoutWidget2)
+        self.search_student.setMinimumSize(QtCore.QSize(0, 31))
+        self.search_student.setStyleSheet("QLineEdit{\n"
+"padding-left:20px;\n"
+"border:1px solid gray;\n"
+"border-radius:10px;\n"
+"}")
+        self.search_student.setObjectName("search_student")
+        self.horizontalLayout_5.addWidget(self.search_student)
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
@@ -609,15 +809,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.main_screen_widget)
         self.gridLayout.addLayout(self.verticalLayout_4, 0, 2, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 1212, 33))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
-        self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
-        self.statusbar.setObjectName("statusbar")
-        MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
+        self.stackedWidget.setCurrentIndex(2)
         self.students_2.toggled['bool'].connect(self.students_dropdown.setHidden) # type: ignore
         self.teachers_2.toggled['bool'].connect(self.teachers_dropdown.setHidden) # type: ignore
         self.finances_2.toggled['bool'].connect(self.finances_dropdown.setHidden) # type: ignore
@@ -652,7 +846,47 @@ class Ui_MainWindow(object):
         self.lineEdit.setPlaceholderText(_translate("MainWindow", "Search Here..."))
         self.label_7.setText(_translate("MainWindow", "Dashboard"))
         self.label_8.setText(_translate("MainWindow", "Institution"))
-        self.label_9.setText(_translate("MainWindow", "Customer Information"))
+        self.label_9.setText(_translate("MainWindow", "Customer Info"))
+        self.label_18.setText(_translate("MainWindow", "Welcome to the customer information page"))
+        item = self.customerInfo_table.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Name"))
+        item = self.customerInfo_table.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "ID"))
+        item = self.customerInfo_table.horizontalHeaderItem(2)
+        item.setText(_translate("MainWindow", "Gender"))
+        item = self.customerInfo_table.horizontalHeaderItem(3)
+        item.setText(_translate("MainWindow", "Model"))
+        item = self.customerInfo_table.horizontalHeaderItem(4)
+        item.setText(_translate("MainWindow", "Birthday"))
+        item = self.customerInfo_table.horizontalHeaderItem(5)
+        item.setText(_translate("MainWindow", "Age"))
+        item = self.customerInfo_table.horizontalHeaderItem(6)
+        item.setText(_translate("MainWindow", "Address"))
+        item = self.customerInfo_table.horizontalHeaderItem(7)
+        item.setText(_translate("MainWindow", "Phone"))
+        item = self.customerInfo_table.horizontalHeaderItem(8)
+        item.setText(_translate("MainWindow", "Email"))
+        item = self.customerInfo_table.horizontalHeaderItem(9)
+        item.setText(_translate("MainWindow", "Action"))
+        self.addCustomer_btn.setText(_translate("MainWindow", "Add"))
+        self.excelExport_btn.setText(_translate("MainWindow", "Export to Excel"))
+        self.pdfExport_btn.setText(_translate("MainWindow", "Export to PDF"))
+        self.select_gender.setItemText(0, _translate("MainWindow", "SELECT GENDER"))
+        self.select_gender.setItemText(1, _translate("MainWindow", "Male"))
+        self.select_gender.setItemText(2, _translate("MainWindow", "Female"))
+        self.select_gender.setItemText(3, _translate("MainWindow", "Others"))
+        self.select_model.setItemText(0, _translate("MainWindow", "SELECT MODEL"))
+        self.select_model.setItemText(1, _translate("MainWindow", "Model 1"))
+        self.select_model.setItemText(2, _translate("MainWindow", "Model 2"))
+        self.select_model.setItemText(3, _translate("MainWindow", "Model 3"))
+        self.select_model.setItemText(4, _translate("MainWindow", "Model 4"))
+        self.select_model.setItemText(5, _translate("MainWindow", "Model 5"))
+        self.select_model.setItemText(6, _translate("MainWindow", "Model 6"))
+        self.select_model.setItemText(7, _translate("MainWindow", "Model 7"))
+        self.select_model.setItemText(8, _translate("MainWindow", "Model 8"))
+        self.select_model.setItemText(9, _translate("MainWindow", "Model 9"))
+        self.select_model.setItemText(10, _translate("MainWindow", "Model 10"))
+        self.search_student.setPlaceholderText(_translate("MainWindow", "Search Customer..."))
         self.label_10.setText(_translate("MainWindow", "Customer Payments"))
         self.label_11.setText(_translate("MainWindow", "Customers Transactions"))
         self.label_12.setText(_translate("MainWindow", "Staff Information"))
