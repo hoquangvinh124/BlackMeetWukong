@@ -216,17 +216,52 @@ color: rgb(0, 0, 0);</string>
           </property>
           <item>
            <property name="text">
-            <string>Nam</string>
+            <string>Model 1</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Nữ</string>
+            <string>Model 2</string>
            </property>
           </item>
           <item>
            <property name="text">
-            <string>Khác</string>
+            <string>Model 3</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Model 4</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Model 5</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Model 6</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Model 7</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Model 8</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Model 9</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Model 10</string>
            </property>
           </item>
          </widget>
