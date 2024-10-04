@@ -262,9 +262,8 @@ class Ui_KhachHangDialog(QDialog):
         QtCore.QMetaObject.connectSlotsByName(self)
 
     def reset_font_to_default(self):
-            default_font = QtGui.QFont()  # Tạo phông chữ mặc định
+            default_font = QtGui.QFont()
 
-            # Đặt lại phông chữ cho tất cả các QLineEdit
             self.name_lineEdit.setFont(default_font)
             self.address_lineEdit.setFont(default_font)
             self.phone_lineEdit.setFont(default_font)
@@ -313,8 +312,7 @@ class Ui_KhachHangDialog(QDialog):
         cursor = self.mydb.cursor()
         return self.mydb
 
-    # TAO BANG KHACH HANG:
-
+    # Tao bang khach hang:
     def create_customer_table(self):
         cursor = self.create_connection().cursor
 
@@ -333,11 +331,10 @@ class Ui_KhachHangDialog(QDialog):
         cursor = self.mydb.cursor()
         cursor.execute(create_customer_table_query)
 
-        # Commit
         self.mydb.commit()
         self.mydb.close()
 
-    # THEM KHACH HANG
+    #Them khach hang
     def insert_new_customer(self):
 
         try:
@@ -400,10 +397,8 @@ class Ui_KhachHangDialog(QDialog):
                  if not existing_id:
                      return customer_id
 
-
-
     def generate_randomNumber(self):
-
+            #Tao ID
             number = randint(1,1000)
             random_number = f'{number:04d}'
             return random_number

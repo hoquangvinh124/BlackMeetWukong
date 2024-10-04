@@ -279,7 +279,7 @@ class UpdateKhachHangDialog(QDialog):
 
     def retranslateUi(self):
         _translate = QtCore.QCoreApplication.translate
-        self.setWindowTitle(_translate("UpdateKhachHangDialog", "Update Khach Hang Dialog"))
+        self.setWindowTitle(_translate("Update Information", "Update Information"))
         self.setWindowIcon(QIcon(":/Icons/logo.png"))
         self.label.setText(_translate("UpdateKhachHangDialog", "<html><head/><body><p align=\"center\">Update Customer Information</p></body></html>"))
         self.label_2.setText(_translate("UpdateKhachHangDialog", "Full Name"))
@@ -304,9 +304,9 @@ class UpdateKhachHangDialog(QDialog):
         self.label_14.setText(_translate("UpdateKhachHangDialog", "Email"))
         self.updatepushButton.setText(_translate("UpdateKhachHangDialog", "Update"))
         self.updatecancelpushButton.setText(_translate("UpdateKhachHangDialog", "Cancel"))
-    # RetranlateUi
 
-        #For the Date from the MySQL Database, first convert the string to a Qdate before displaying in QDateEdit
+
+        #Chuyen dinh dang cua ngay
         date_object=QDate.fromString(self.customer_birthday_info, "yyyy-MM-dd" )
 
         self.update_name_lineEdit.setText(str(self.customer_name_info))
@@ -317,7 +317,7 @@ class UpdateKhachHangDialog(QDialog):
         self.update_phone_lineEdit.setText(str(self.customer_phone_info))
         self.update_email_lineEdit.setText(str(self.customer_email_info))
 
-        #Store initial gender of the QComboBoxx
+
         self.lastIndex=self.update_gender_comboBox.currentText()
 
         self.updatepushButton.clicked.connect(self.update_data)
@@ -339,7 +339,6 @@ class UpdateKhachHangDialog(QDialog):
 
             self.cursor = self.create_connection().cursor()
 
-            #get customer variables from the tuple
             self.customer_name=self.row_data[0]
             self.customer_id = self.row_data[1]
 
@@ -367,13 +366,13 @@ class UpdateKhachHangDialog(QDialog):
                         return
                 cursor=connection.cursor()
 
-                #Assuming birthday is a QDateObject
+
                 birth_date=self.update_dob_dateEdit.date()
 
                 birthday=self.handleDataChange()
                 age=self.calculate_age(birth_date)
 
-                #Check if the gender has changed. create a new customer id
+                #Neu gioi tinh doi thi tao ID moi
                 current_customer_id=self.on_gender_changed(self.update_gender_comboBox.currentText())
 
                 params=(
@@ -400,7 +399,6 @@ class UpdateKhachHangDialog(QDialog):
                 connection.close()
                 self.close()
 
-                #emit signal
                 self.data_updated.emit()
 
             except pymysql.connect.Error as err:
@@ -421,6 +419,7 @@ class UpdateKhachHangDialog(QDialog):
             if (current_date.month, current_date.day) < (birth_datetime.month, birth_datetime.day):
                     age -= 1
             return age
+
     def on_gender_changed(self, index):
 
             if index !=self.lastIndex:
@@ -451,10 +450,8 @@ class UpdateKhachHangDialog(QDialog):
                  if not existing_id:
                      return customer_id
 
-
-
     def generate_randomNumber(self):
-
+            #Tao ID
             number = randint(1,1000)
             random_number = f'{number:04d}'
             return random_number
