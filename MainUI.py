@@ -7,6 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6.QtGui import QMovie
 
 
 class Ui_MainWindow(object):
@@ -493,9 +494,11 @@ class Ui_MainWindow(object):
         self.lineEdit.setObjectName("lineEdit")
         self.horizontalLayout.addWidget(self.lineEdit)
         self.label_6 = QtWidgets.QLabel(parent=self.qwww)
-        self.label_6.setMaximumSize(QtCore.QSize(40, 40))
+        self.label_6.setMaximumSize(QtCore.QSize(60, 60))
         self.label_6.setText("")
-        self.label_6.setPixmap(QtGui.QPixmap(":/profile.png"))
+        movie = QMovie(":/omen-valorant.gif")
+        self.label_6.setMovie(movie)
+        movie.start()
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
         self.horizontalLayout.addWidget(self.label_6)
