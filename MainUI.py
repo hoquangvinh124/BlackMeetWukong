@@ -163,6 +163,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.addWidget(self.label_2)
         self.verticalLayout_10 = QtWidgets.QVBoxLayout()
         self.verticalLayout_10.setObjectName("verticalLayout_10")
+        self.verticalLayout_10.setSpacing(15)
+
         self.dashboard_2 = QtWidgets.QPushButton(parent=self.icon_text_widget)
         font = QtGui.QFont()
         font.setPointSize(8)

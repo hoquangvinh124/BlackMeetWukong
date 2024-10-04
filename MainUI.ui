@@ -334,6 +334,9 @@ border:none;
         </item>
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_10">
+          <property name="spacing">
+           <number>15</number>
+          </property>
           <item>
            <widget class="QPushButton" name="dashboard_2">
             <property name="font">
