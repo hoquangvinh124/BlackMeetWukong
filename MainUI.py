@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'C:\Users\ACER\PycharmProjects\BlackMeetWukong\MainUI.ui'
+# Form implementation generated from reading ui file 'D:\ProjectTotNghiep\MainUI.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.1
 #
@@ -46,9 +46,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_12 = QtWidgets.QVBoxLayout(self.icon_only_widget)
         self.verticalLayout_12.setObjectName("verticalLayout_12")
         self.label_4 = QtWidgets.QLabel(parent=self.icon_only_widget)
-        self.label_4.setMaximumSize(QtCore.QSize(40, 40))
+        self.label_4.setMaximumSize(QtCore.QSize(80, 60))
         self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap(":/logo.png"))
+        self.label_4.setPixmap(QtGui.QPixmap("C:/Users/PC LENOVO/Downloads/logosmall2.jpeg"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
         self.verticalLayout_12.addWidget(self.label_4)
@@ -152,18 +152,15 @@ class Ui_MainWindow(object):
 "\n"
 "}")
         self.icon_text_widget.setObjectName("icon_text_widget")
-        self.verticalLayout_13 = QtWidgets.QVBoxLayout(self.icon_text_widget)
-        self.verticalLayout_13.setObjectName("verticalLayout_13")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.icon_text_widget)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.label_2 = QtWidgets.QLabel(parent=self.icon_text_widget)
-        self.label_2.setMaximumSize(QtCore.QSize(40, 40))
+        self.label_2.setMaximumSize(QtCore.QSize(211, 141))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap(":/logo.png"))
+        self.label_2.setPixmap(QtGui.QPixmap("C:/Users/PC LENOVO/Downloads/logo1.jpeg"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
-        self.verticalLayout_13.addWidget(self.label_2)
-        self.label_3 = QtWidgets.QLabel(parent=self.icon_text_widget)
-        self.label_3.setObjectName("label_3")
-        self.verticalLayout_13.addWidget(self.label_3)
+        self.verticalLayout_2.addWidget(self.label_2)
         self.verticalLayout_10 = QtWidgets.QVBoxLayout()
         self.verticalLayout_10.setObjectName("verticalLayout_10")
         self.dashboard_2 = QtWidgets.QPushButton(parent=self.icon_text_widget)
@@ -396,9 +393,9 @@ class Ui_MainWindow(object):
         self.verticalLayout_16.addWidget(self.business_overview)
         self.verticalLayout_8.addWidget(self.finances_dropdown)
         self.verticalLayout_10.addWidget(self.finances)
-        self.verticalLayout_13.addLayout(self.verticalLayout_10)
+        self.verticalLayout_2.addLayout(self.verticalLayout_10)
         spacerItem1 = QtWidgets.QSpacerItem(20, 289, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.verticalLayout_13.addItem(spacerItem1)
+        self.verticalLayout_2.addItem(spacerItem1)
         self.verticalLayout_9 = QtWidgets.QVBoxLayout()
         self.verticalLayout_9.setSpacing(15)
         self.verticalLayout_9.setObjectName("verticalLayout_9")
@@ -438,9 +435,8 @@ class Ui_MainWindow(object):
         self.sign_out_1.setCheckable(True)
         self.sign_out_1.setObjectName("sign_out_1")
         self.verticalLayout_9.addWidget(self.sign_out_1)
-        self.verticalLayout_13.addLayout(self.verticalLayout_9)
+        self.verticalLayout_2.addLayout(self.verticalLayout_9)
         self.label_2.raise_()
-        self.label_3.raise_()
         self.gridLayout.addWidget(self.icon_text_widget, 0, 1, 1, 1)
         self.verticalLayout_4 = QtWidgets.QVBoxLayout()
         self.verticalLayout_4.setObjectName("verticalLayout_4")
@@ -831,7 +827,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_3.setText(_translate("MainWindow", "TextLabel"))
         self.student_info.setText(_translate("MainWindow", "Customer Information"))
         self.student_payments.setText(_translate("MainWindow", "Customer Payments"))
         self.student_transactions.setText(_translate("MainWindow", "Customer Transactions"))

@@ -10,19 +10,19 @@
     <x>0</x>
     <y>0</y>
     <width>1212</width>
-    <height>831</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>1212</width>
-    <height>831</height>
+    <height>800</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1212</width>
-    <height>831</height>
+    <height>800</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -37,7 +37,7 @@
      <rect>
       <x>0</x>
       <y>-10</y>
-      <width>1211</width>
+      <width>1157</width>
       <height>818</height>
      </rect>
     </property>
@@ -74,15 +74,15 @@ border-radius:3px;
          <widget class="QLabel" name="label_4">
           <property name="maximumSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>80</width>
+            <height>60</height>
            </size>
           </property>
           <property name="text">
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="Accessories/resources.qrc">:/logo.png</pixmap>
+           <pixmap>C:/Users/PC LENOVO/Downloads/logosmall2.jpeg</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
@@ -312,30 +312,23 @@ border:none;
 
 }</string>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_13">
+       <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <widget class="QLabel" name="label_2">
           <property name="maximumSize">
            <size>
-            <width>40</width>
-            <height>40</height>
+            <width>211</width>
+            <height>141</height>
            </size>
           </property>
           <property name="text">
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap resource="Accessories/resources.qrc">:/logo.png</pixmap>
+           <pixmap>C:/Users/PC LENOVO/Downloads/logo1.jpeg</pixmap>
           </property>
           <property name="scaledContents">
            <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label_3">
-          <property name="text">
-           <string>TextLabel</string>
           </property>
          </widget>
         </item>
@@ -878,7 +871,6 @@ QPushButton:checked{
         </item>
        </layout>
        <zorder>label_2</zorder>
-       <zorder>label_3</zorder>
        <zorder>verticalSpacer</zorder>
       </widget>
      </item>
@@ -1674,7 +1666,6 @@ border-radius:10px;
     </layout>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
   <include location="Accessories/resources.qrc"/>

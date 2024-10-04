@@ -62,6 +62,7 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         self.load_customers_info()
         self.select_model.currentIndexChanged.connect(self.reload_customertable_info)
         self.select_gender.currentIndexChanged.connect(self.reload_customertable_info)
+        self.search_student.textChanged.connect(self.search_customer)
 
         # Control column widths
         self.customerInfo_table.setColumnWidth(0, 110)
@@ -336,6 +337,27 @@ class MySideBar(QMainWindow, Ui_MainWindow):
         cursor.execute(query)
         data = cursor.fetchall()
         return data
+
+    def search_customer(self):
+        self.customerInfo_table.setRowCount(0)
+        search_query = self.search_student.text()
+        cursor = self.create_connection().cursor()
+        sql_query = f"""SELECT names, customer_id, gender, nails, birthday, age, address, phone_number, email FROM customer_table WHERE
+                                names LIKE '%{search_query}%'"""
+        cursor.execute(sql_query)
+        results = cursor.fetchall()
+        for row_index, row_data in enumerate(results):
+            self.customerInfo_table.insertRow(row_index)
+            for col_index, cell_data in enumerate(row_data):
+                item = QTableWidgetItem(str(cell_data))
+                self.customerInfo_table.setItem(row_index, col_index, item)
+
+                double_button_widget = DoubleButtonWidgetCustomer(row_index, row_data, self)
+
+                self.customerInfo_table.setCellWidget(row_index, 9, double_button_widget)
+                self.customerInfo_table.setRowHeight(row_index, 50)
+
+
 
 class DoubleButtonWidgetCustomer(QWidget):
     def __init__(self, row_index, row_data, sideBar):
