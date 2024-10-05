@@ -383,8 +383,8 @@ class UpdateKhachHangDialog(QDialog):
                         birthday,
                         age,
                         self.update_address_lineEdit.text(),
-                        self.update_email_lineEdit.text(),
                         self.update_phone_lineEdit.text(),
+                        self.update_email_lineEdit.text(),
                         self.customer_id_info
                 )
 
