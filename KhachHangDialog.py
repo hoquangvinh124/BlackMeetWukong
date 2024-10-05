@@ -336,7 +336,6 @@ class Ui_KhachHangDialog(QDialog):
 
     #Them khach hang
     def insert_new_customer(self):
-
         try:
             connection = self.create_connection()
             if connection is None:
